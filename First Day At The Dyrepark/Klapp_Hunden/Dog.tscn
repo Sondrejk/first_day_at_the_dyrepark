@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://504lojgjdnlc"]
+
+[ext_resource type="PackedScene" uid="uid://ba1k5am2qf8rg" path="res://Klapp_Hunden/Animal.tscn" id="1_ts57k"]
+[ext_resource type="Script" path="res://Klapp_Hunden/Dog.gd" id="2_wqrpe"]
+
+[node name="Dog" instance=ExtResource("1_ts57k")]
+script = ExtResource("2_wqrpe")
