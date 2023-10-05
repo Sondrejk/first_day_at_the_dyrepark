@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 var dog_scene = preload("res://KlappHunden/Scenes/Dog.tscn")
 var bear_scene = preload("res://KlappHunden/Scenes/Bear.tscn")
 
