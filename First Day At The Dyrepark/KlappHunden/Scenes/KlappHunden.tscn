@@ -1,9 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjrf1oo0txpmn"]
+[gd_scene load_steps=5 format=3 uid="uid://cjrf1oo0txpmn"]
 
 [ext_resource type="Script" path="res://KlappHunden/Scripts/GameManager.gd" id="1_0ctvc"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ad028"]
+line_spacing = 0.0
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_kscc5"]
+line_spacing = 0.0
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_0vpii"]
+font_size = 100
+
 [node name="KlappHunden" type="Node2D"]
 script = ExtResource("1_0ctvc")
+
+[node name="GameOverScreen" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -50.5
+offset_right = 71.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverText" type="Label" parent="GameOverScreen"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_ad028")
+
+[node name="GameOverScoreText" type="Label" parent="GameOverScreen"]
+layout_mode = 2
+text = "SCORE: 0"
+label_settings = SubResource("LabelSettings_kscc5")
+horizontal_alignment = 1
+
+[node name="RestartGame" type="Button" parent="GameOverScreen"]
+layout_mode = 2
+text = "Spill Igjen"
+
+[node name="QuitToDyrehage" type="Button" parent="GameOverScreen"]
+layout_mode = 2
+text = "Til Dyrehagen"
+
+[node name="QuitToMenu" type="Button" parent="GameOverScreen"]
+layout_mode = 2
+text = "Til Hovedmenyen"
 
 [node name="AnimalSpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -11,4 +59,13 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="ScoreText" type="Label" parent="."]
+offset_left = -629.0
+offset_top = -502.0
+offset_right = -202.0
+offset_bottom = -362.0
+text = "SCORE: 0"
+label_settings = SubResource("LabelSettings_0vpii")
+
+[connection signal="button_down" from="GameOverScreen/RestartGame" to="." method="_on_restart_game_button_down"]
 [connection signal="timeout" from="AnimalSpawnTimer" to="." method="_on_animal_spawn_timer_timeout"]

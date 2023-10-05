@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3rvm0bdmitao"]
+[gd_scene load_steps=5 format=3 uid="uid://b3rvm0bdmitao"]
 
 [ext_resource type="PackedScene" uid="uid://bgn6vk30tnekw" path="res://KlappHunden/Scenes/Animal.tscn" id="1_th6xt"]
+[ext_resource type="Script" path="res://KlappHunden/Scripts/Bear.gd" id="2_eo2d7"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0uxk8"]
 size = Vector2(200, 200)
@@ -9,9 +10,12 @@ size = Vector2(200, 200)
 size = Vector2(200, 200)
 
 [node name="Bear" instance=ExtResource("1_th6xt")]
+script = ExtResource("2_eo2d7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 texture = SubResource("PlaceholderTexture2D_0uxk8")
+offset = Vector2(0, -99.93)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -100)
 shape = SubResource("RectangleShape2D_3olw5")

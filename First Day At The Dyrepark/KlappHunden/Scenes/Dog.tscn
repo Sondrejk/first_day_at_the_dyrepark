@@ -2,18 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://bgn6vk30tnekw" path="res://KlappHunden/Scenes/Animal.tscn" id="1_icm1r"]
 [ext_resource type="Script" path="res://KlappHunden/Scripts/Dog.gd" id="2_ylnp0"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fvx8i"]
-size = Vector2(100, 100)
+[ext_resource type="Texture2D" uid="uid://do65k3ctt03kv" path="res://KlappHunden/Sprites/Hund_1.png" id="3_we7nq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amimq"]
-size = Vector2(100, 100)
+size = Vector2(186.5, 209.5)
 
 [node name="Dog" instance=ExtResource("1_icm1r")]
 script = ExtResource("2_ylnp0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
-texture = SubResource("PlaceholderTexture2D_fvx8i")
+position = Vector2(0, -1.52588e-05)
+scale = Vector2(15, 15)
+texture = ExtResource("3_we7nq")
+offset = Vector2(0, -16)
+hframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(25.75, -105)
 shape = SubResource("RectangleShape2D_amimq")
