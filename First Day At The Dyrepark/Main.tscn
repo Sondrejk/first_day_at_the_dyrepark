@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2yixido73set"]
+
+[ext_resource type="PackedScene" uid="uid://cjrf1oo0txpmn" path="res://KlappHunden/Scenes/KlappHunden.tscn" id="1_ddyrj"]
+
+[node name="Main" type="Node2D"]
+
+[node name="KlappHunden" parent="." instance=ExtResource("1_ddyrj")]
