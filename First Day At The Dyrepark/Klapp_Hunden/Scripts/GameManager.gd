@@ -1,7 +1,7 @@
 extends Node2D
 
-var dog_scene = preload("res://Klapp_Hunden/Dog.tscn")
-var bear_scene = preload("res://Klapp_Hunden/Bear.tscn")
+var dog_scene = preload("res://Klapp_Hunden/Scenes/Dog.tscn")
+var bear_scene = preload("res://Klapp_Hunden/Scenes/Bear.tscn")
 @onready var timer : Timer = get_node("Spawn_timer")
 var score : int = 0
 var game_speed : float = 1
@@ -25,4 +25,4 @@ func _on_spawn_timer_timeout():
 	spawn_animal()
 
 func game_over():
-	pass
+	get_tree().reload_current_scene()

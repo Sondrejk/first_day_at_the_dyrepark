@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://ba1k5am2qf8rg"]
 
-[ext_resource type="Script" path="res://Klapp_Hunden/Animal.gd" id="1_a4cvp"]
+[ext_resource type="Script" path="res://Klapp_Hunden/Scripts/Animal.gd" id="1_rhyet"]
 
 [node name="Animal" type="Area2D"]
-script = ExtResource("1_a4cvp")
+script = ExtResource("1_rhyet")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
