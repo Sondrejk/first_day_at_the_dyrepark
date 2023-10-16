@@ -11,7 +11,7 @@ func _ready():
 	
 
 # Moves the animal across the screen, can give exact x position
-func walk(delta : float, target : float):
+func walk_to_target(delta : float, target : float):
 	# Moves the animal to the exact target x coordinate, if its close enough
 	if abs(position.x - target) < move_speed * delta:
 		position.x = target
@@ -19,6 +19,10 @@ func walk(delta : float, target : float):
 	# Moves the animal to the right if it isnt
 	elif position.x != target:
 		position.x += move_speed * delta
+
+# Moves the animal
+func walk(delta):
+	position.x += move_speed * delta
 
 func despawn():
 	queue_free()
