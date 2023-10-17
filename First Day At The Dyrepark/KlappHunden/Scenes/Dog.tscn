@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxm6nnnv6dk3a"]
+[gd_scene load_steps=11 format=3 uid="uid://bxm6nnnv6dk3a"]
 
 [ext_resource type="PackedScene" uid="uid://bgn6vk30tnekw" path="res://KlappHunden/Scenes/Animal.tscn" id="1_icm1r"]
 [ext_resource type="Script" path="res://KlappHunden/Scripts/Dog.gd" id="2_ylnp0"]
@@ -7,8 +7,84 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amimq"]
 size = Vector2(186.5, 209.5)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wf27q"]
+
+[sub_resource type="Animation" id="Animation_ncsm4"]
+resource_name = "walk_in"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_7e6qo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_anm43"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_htqsv"]
+resource_name = "walk_out"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfoa1"]
+_data = {
+"RESET": SubResource("Animation_7e6qo"),
+"idle": SubResource("Animation_anm43"),
+"walk_in": SubResource("Animation_ncsm4"),
+"walk_out": SubResource("Animation_htqsv")
+}
+
 [node name="Dog" instance=ExtResource("1_icm1r")]
 script = ExtResource("2_ylnp0")
+move_speed = null
+petted = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(0, -1.52588e-05)
@@ -20,3 +96,11 @@ hframes = 12
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(25.75, -105)
 shape = SubResource("RectangleShape2D_amimq")
+
+[node name="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeAnimation_wf27q")
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_rfoa1")
+}

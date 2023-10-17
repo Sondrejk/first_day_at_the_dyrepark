@@ -15,9 +15,9 @@ func _on_animal_spawn_timer_timeout():
 	if is_game_active:
 		var dog = dog_scene.instantiate()
 		var bear = bear_scene.instantiate()
-		var animals : Array = [dog, bear]
+		var animals : Array = [dog, dog, bear]
 			
-		add_child(animals[randi_range(0, 1)])
+		add_child(animals[randi_range(0, 2)])
 
 # Adds score and updates the score text
 func add_score(amount):

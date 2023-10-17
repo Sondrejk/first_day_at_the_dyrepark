@@ -2,8 +2,10 @@ extends Area2D
 class_name Animal
 
 @onready var game_manager : Node2D = get_node("/root/KlappHunden")
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
 @export var move_speed : float = 200
-var start_position = Vector2(-700, 20)
+@export var petted : bool = false
+var start_position = Vector2(-800, 100)
 
 # When spawned, starts at the starting position
 func _ready():
@@ -20,12 +22,12 @@ func walk_to_target(delta : float, target : float):
 	elif position.x != target:
 		position.x += move_speed * delta
 
-# Moves the animal
+# Moves the animal across the screen
 func walk(delta):
 	position.x += move_speed * delta
 
 func despawn():
 	queue_free()
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	game_manager.game_over()

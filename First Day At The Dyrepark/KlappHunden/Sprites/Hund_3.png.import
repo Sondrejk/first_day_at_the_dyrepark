@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr3nx7rrl5coi"
-path="res://.godot/imported/Hund 3.png-2ea9a32a8107b36ca26e1e85bc5f6db6.ctex"
+path="res://.godot/imported/Hund_3.png-8e9b406eb8bb0af73eace81d8562d21f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://KlappHunden/Sprites/Hund 3.png"
-dest_files=["res://.godot/imported/Hund 3.png-2ea9a32a8107b36ca26e1e85bc5f6db6.ctex"]
+source_file="res://KlappHunden/Sprites/Hund_3.png"
+dest_files=["res://.godot/imported/Hund_3.png-8e9b406eb8bb0af73eace81d8562d21f.ctex"]
 
 [params]
 
