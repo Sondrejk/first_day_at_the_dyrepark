@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var starting_position : Vector2 = Vector2(0, 0)
 
 func _ready():
-	pass
+	position = starting_position
 
 func _physics_process(delta):
 	# Movement

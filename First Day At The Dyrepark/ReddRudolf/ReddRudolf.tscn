@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://hewf6cdwui70"]
+
+[ext_resource type="Script" path="res://ReddRudolf/ReddRudolfManager.gd" id="1_wxx8a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jsdjx"]
+font_size = 100
+
+[node name="ReddRudolf" type="Node2D"]
+script = ExtResource("1_wxx8a")
+dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlaceholderMenu" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -50.5
+offset_right = 71.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PlaceholderMenu"]
+layout_mode = 2
+text = "Redd Rudolf"
+label_settings = SubResource("LabelSettings_jsdjx")
+
+[node name="RestartGame" type="Button" parent="PlaceholderMenu"]
+layout_mode = 2
+text = "Spill Igjen"
+
+[node name="QuitToDyrehage" type="Button" parent="PlaceholderMenu"]
+layout_mode = 2
+text = "Til Dyrehagen"
+
+[node name="QuitToMenu" type="Button" parent="PlaceholderMenu"]
+layout_mode = 2
+text = "Til Hovedmenyen"
+
+[connection signal="button_down" from="PlaceholderMenu/RestartGame" to="." method="_on_restart_game_button_down"]
+[connection signal="button_down" from="PlaceholderMenu/QuitToDyrehage" to="." method="_on_quit_to_dyrehage_button_down"]
