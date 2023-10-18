@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2yixido73set"]
+
+[ext_resource type="PackedScene" uid="uid://cti3onrm460wg" path="res://Dyrepark/Scenes/Player.tscn" id="1_e82br"]
+[ext_resource type="PackedScene" uid="uid://b2aqovuuekejs" path="res://Dyrepark/Scenes/KlappHundenTrigger.tscn" id="2_62uxn"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_e82br")]
+
+[node name="KlappHundenTrigger" parent="." instance=ExtResource("2_62uxn")]
+position = Vector2(122, 0)
+minigame_scene = "res://KlappHunden/Scenes/KlappHunden.tscn"
