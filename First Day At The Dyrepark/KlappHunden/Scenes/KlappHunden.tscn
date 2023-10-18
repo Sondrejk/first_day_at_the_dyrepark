@@ -15,6 +15,7 @@ font_size = 100
 
 [node name="KlappHunden" type="Node2D"]
 script = ExtResource("1_762ro")
+dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
 
 [node name="GameOverScreen" type="VBoxContainer" parent="."]
 visible = false
@@ -69,4 +70,5 @@ label_settings = SubResource("LabelSettings_0vpii")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="GameOverScreen/RestartGame" to="." method="_on_restart_game_button_down"]
+[connection signal="button_down" from="GameOverScreen/QuitToDyrehage" to="." method="_on_quit_to_dyrehage_button_down"]
 [connection signal="timeout" from="AnimalSpawnTimer" to="." method="_on_animal_spawn_timer_timeout"]

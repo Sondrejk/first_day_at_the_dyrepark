@@ -1,8 +1,13 @@
 extends Node2D
 
+# References to scenes
 var dog_scene = preload("res://KlappHunden/Scenes/Dog.tscn")
 var bear_scene = preload("res://KlappHunden/Scenes/Bear.tscn")
 
+# References to files
+@export_file("*.tscn") var dyrehage_scene
+
+# References to other nodes
 @onready var game_over_screen : VBoxContainer = $GameOverScreen
 @onready var score_text : Label = $ScoreText
 @onready var game_over_score_text : Label = $GameOverScreen/GameOverScoreText
@@ -11,11 +16,8 @@ var bear_scene = preload("res://KlappHunden/Scenes/Bear.tscn")
 var is_game_active : bool = true
 var score : int = 0
 
+# Used to calculate total gametime
 var start_time = Time.get_unix_time_from_system()
-
-func _ready():
-	if is_game_active:
-		show()
 
 # Spawns animals randomly based on the timer timeout
 func _on_animal_spawn_timer_timeout():
@@ -27,6 +29,7 @@ func _on_animal_spawn_timer_timeout():
 		add_child(animals[randi_range(0, 2)])
 		
 func _process(_delta):
+	# Calculates the total gametime for the difficulty scaling below
 	var current_time = Time.get_unix_time_from_system()
 	var game_time = current_time - start_time
 	
@@ -47,3 +50,6 @@ func game_over():
 
 func _on_restart_game_button_down():
 	get_tree().reload_current_scene()
+
+func _on_quit_to_dyrehage_button_down():
+	get_tree().change_scene_to_file(dyrehage_scene)
