@@ -1,7 +1,10 @@
 extends Animal
 
 func _process(delta):
+	# Difficulty scaling with speed
 	move_speed = start_speed * game_manager.game_speed
+	
+	# Movement logic
 	if position.x >= 700:
 		despawn()
 	if walk_to_target(delta, 0) and Input.is_key_label_pressed(KEY_O):

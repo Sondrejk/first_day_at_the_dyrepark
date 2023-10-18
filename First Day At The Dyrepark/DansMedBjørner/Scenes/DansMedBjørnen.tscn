@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://2vskchnd50cw"]
+
+[ext_resource type="Script" path="res://DansMedBjørner/Scripts/DansMedBjørnenManager.gd" id="1_b04rf"]
+[ext_resource type="Script" path="res://DansMedBjørner/Scripts/DancingBear.gd" id="2_vs3ym"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1j7of"]
+size = Vector2(100, 100)
+
+[node name="DansMedBjørner" type="Node2D"]
+script = ExtResource("1_b04rf")
+dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
+
+[node name="DancingBear" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_1j7of")
+script = ExtResource("2_vs3ym")
+
+[node name="Camera2D" type="Camera2D" parent="."]
