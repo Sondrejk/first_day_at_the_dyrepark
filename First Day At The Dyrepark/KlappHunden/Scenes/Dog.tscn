@@ -83,8 +83,6 @@ _data = {
 
 [node name="Dog" instance=ExtResource("1_icm1r")]
 script = ExtResource("2_ylnp0")
-move_speed = null
-petted = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(0, -1.52588e-05)

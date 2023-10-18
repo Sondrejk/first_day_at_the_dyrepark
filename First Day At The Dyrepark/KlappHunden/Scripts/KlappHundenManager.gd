@@ -15,6 +15,7 @@ var bear_scene = preload("res://KlappHunden/Scenes/Bear.tscn")
 
 var is_game_active : bool = true
 var score : int = 0
+var game_speed : float = 1
 
 # Used to calculate total gametime
 var start_time = Time.get_unix_time_from_system()
@@ -35,6 +36,8 @@ func _process(_delta):
 	
 	# Difficulty scaling
 	spawn_timer.wait_time = 75/(game_time + 25)
+	game_speed = 0.02 * game_time + 1
+	
 	
 
 # Adds score and updates the score text

@@ -3,7 +3,8 @@ class_name Animal
 
 @onready var game_manager : Node2D = $".."
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
-@export var move_speed : float = 200
+@export var start_speed : float = 200
+@export var move_speed : float = start_speed
 @export var petted : bool = false
 var start_position = Vector2(-800, 100)
 
@@ -15,7 +16,7 @@ func _ready():
 # Moves the animal across the screen, can give exact x position
 func walk_to_target(delta : float, target : float):
 	# Moves the animal to the exact target x coordinate, if its close enough
-	if abs(position.x - target) < move_speed * delta:
+	if abs(position.x - target) < move_speed * delta/2:
 		position.x = target
 		return true
 	# Moves the animal to the right if it isnt

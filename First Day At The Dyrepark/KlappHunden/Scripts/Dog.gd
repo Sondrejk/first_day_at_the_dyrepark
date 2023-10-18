@@ -7,6 +7,7 @@ var Hund1 = preload("res://KlappHunden/Sprites/Hund_1.png")
 var Hund2 = preload("res://KlappHunden/Sprites/Hund_2.png")
 var Hund3 = preload("res://KlappHunden/Sprites/Hund_3.png")
 
+# Changes texture based on input number
 func change_texture(num):
 	if num == 1:
 		sprite.texture = Hund1
@@ -21,6 +22,10 @@ func _ready():
 	
 
 func _process(delta):
+	# Difficulty speed scaling
+	move_speed = start_speed * game_manager.game_speed
+	
+	# Movement logic
 	if position.x > 700:
 		despawn()
 	elif walk_to_target(delta, 0) and Input.is_key_label_pressed(KEY_I):
