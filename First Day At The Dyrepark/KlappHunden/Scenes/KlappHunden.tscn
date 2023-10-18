@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjrf1oo0txpmn"]
 
-[ext_resource type="Script" path="res://KlappHunden/Scripts/GameManager.gd" id="1_0ctvc"]
+[ext_resource type="Script" path="res://KlappHunden/Scripts/KlappHundenManager.gd" id="1_762ro"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ad028"]
 line_spacing = 0.0
@@ -14,7 +14,7 @@ font_size = 40
 font_size = 100
 
 [node name="KlappHunden" type="Node2D"]
-script = ExtResource("1_0ctvc")
+script = ExtResource("1_762ro")
 
 [node name="GameOverScreen" type="VBoxContainer" parent="."]
 visible = false
@@ -66,6 +66,7 @@ offset_right = -202.0
 offset_bottom = -362.0
 text = "SCORE: 0"
 label_settings = SubResource("LabelSettings_0vpii")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="GameOverScreen/RestartGame" to="." method="_on_restart_game_button_down"]
 [connection signal="timeout" from="AnimalSpawnTimer" to="." method="_on_animal_spawn_timer_timeout"]

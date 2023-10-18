@@ -1,7 +1,7 @@
 extends Area2D
 class_name Animal
 
-@onready var game_manager : Node2D = get_node("/root/KlappHunden")
+@onready var game_manager : Node2D = $".."
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @export var move_speed : float = 200
 @export var petted : bool = false

@@ -13,6 +13,10 @@ var score : int = 0
 
 var start_time = Time.get_unix_time_from_system()
 
+func _ready():
+	if is_game_active:
+		show()
+
 # Spawns animals randomly based on the timer timeout
 func _on_animal_spawn_timer_timeout():
 	if is_game_active:
@@ -22,7 +26,7 @@ func _on_animal_spawn_timer_timeout():
 			
 		add_child(animals[randi_range(0, 2)])
 		
-func _process(delta):
+func _process(_delta):
 	var current_time = Time.get_unix_time_from_system()
 	var game_time = current_time - start_time
 	
