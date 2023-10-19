@@ -22,7 +22,9 @@ func perform_dance_moves():
 		await get_tree().create_timer(time_between_moves).timeout
 		position = start_position
 		await get_tree().create_timer(time_between_moves).timeout
+	add_random_dance_move()
+	perform_dance_moves()
 
-func _process(delta):
-	await add_random_dance_move()
-	await perform_dance_moves()
+func _ready():
+	add_random_dance_move()
+	perform_dance_moves()
