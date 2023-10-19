@@ -15,7 +15,6 @@ minigame_scene = "res://KlappHunden/Scenes/KlappHunden.tscn"
 
 [node name="DansMedBjørnenTrigger" parent="." instance=ExtResource("2_62uxn")]
 position = Vector2(122, 96)
-minigame_scene = "res://DansMedBjørner/DansMedBjørnen.tscn"
 
 [node name="ReddRudolfTrigger" parent="." instance=ExtResource("2_62uxn")]
 position = Vector2(122, 188)
