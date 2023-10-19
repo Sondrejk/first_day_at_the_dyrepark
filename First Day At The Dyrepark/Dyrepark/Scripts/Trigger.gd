@@ -6,10 +6,10 @@ extends Area2D
 # Boolean that changes depending on if player is in area
 var is_player_in_trigger : bool = false
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	is_player_in_trigger = true
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	is_player_in_trigger = false
 
 # Changes scene if the correct button is pressed

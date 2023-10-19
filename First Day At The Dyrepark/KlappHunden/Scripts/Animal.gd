@@ -8,11 +8,6 @@ class_name Animal
 @export var petted : bool = false
 var start_position = Vector2(-800, 100)
 
-# When spawned, starts at the starting position
-func _ready():
-	position = start_position
-	
-
 # Moves the animal across the screen, can give exact x position
 func walk_to_target(delta : float, target : float):
 	# Moves the animal to the exact target x coordinate, if its close enough

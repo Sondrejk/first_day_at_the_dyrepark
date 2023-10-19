@@ -6,7 +6,7 @@ extends CharacterBody2D
 func _ready():
 	position = starting_position
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Movement
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("up"):
