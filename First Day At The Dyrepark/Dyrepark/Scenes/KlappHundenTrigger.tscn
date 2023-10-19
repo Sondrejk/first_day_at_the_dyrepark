@@ -8,6 +8,7 @@ radius = 30.0
 [node name="KlappHundenTrigger" type="Area2D"]
 position = Vector2(143, 0)
 script = ExtResource("1_0q8jd")
+minigame_scene = "res://DansMedBjørner/Scenes/DansMedBjørnen.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ml2ah")
