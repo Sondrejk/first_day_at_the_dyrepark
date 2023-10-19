@@ -10,7 +10,7 @@
 [node name="Player" parent="." instance=ExtResource("1_e82br")]
 
 [node name="KlappHundenTrigger" parent="." instance=ExtResource("2_62uxn")]
-position = Vector2(212, 0)
+position = Vector2(122, 0)
 minigame_scene = "res://KlappHunden/Scenes/KlappHunden.tscn"
 
 [node name="DansMedBjørnenTrigger" parent="." instance=ExtResource("2_62uxn")]
