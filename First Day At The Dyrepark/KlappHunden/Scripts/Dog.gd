@@ -16,9 +16,14 @@ func change_texture(num):
 	if num == 3:
 		sprite.texture = Hund3
 
+func choose_random_size():
+	scale.x = randf_range(0.5, 1.5)
+	scale.y = scale.x
+
 func _ready():
 	position = start_position
 	change_texture(randi_range(1, 3))
+	choose_random_size()
 	
 
 func _process(delta):
