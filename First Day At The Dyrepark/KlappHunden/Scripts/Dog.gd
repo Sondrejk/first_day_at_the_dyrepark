@@ -17,7 +17,7 @@ func change_texture(num):
 		sprite.texture = Hund3
 
 func choose_random_size():
-	scale.x = randf_range(0.5, 1.5)
+	scale.x = randf_range(7.5, 8.5)
 	scale.y = scale.x
 
 func _ready():

@@ -1,8 +1,13 @@
 extends Animal
 
+func choose_random_size():
+	scale.x = randf_range(7, 8)
+	scale.y = scale.x
+
 func _ready():
 	position = start_position
-
+	choose_random_size()
+	
 func _process(delta):
 	# Difficulty speed scaling
 	move_speed = start_speed * game_manager.game_speed

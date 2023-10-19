@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://do65k3ctt03kv" path="res://KlappHunden/Sprites/Hund_1.png" id="3_we7nq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amimq"]
-size = Vector2(186.5, 209.5)
+size = Vector2(9, 13)
 
 [sub_resource type="Animation" id="Animation_c5ham"]
 resource_name = "idle"
@@ -81,17 +81,17 @@ _data = {
 }
 
 [node name="Dog" instance=ExtResource("1_icm1r")]
+scale = Vector2(5, 5)
 script = ExtResource("2_ylnp0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(1, 0.999985)
-scale = Vector2(15, 15)
 texture = ExtResource("3_we7nq")
-offset = Vector2(0, -16)
+offset = Vector2(0, -17)
 hframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-position = Vector2(25.75, -105)
+position = Vector2(1.5, -6.5)
 shape = SubResource("RectangleShape2D_amimq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
