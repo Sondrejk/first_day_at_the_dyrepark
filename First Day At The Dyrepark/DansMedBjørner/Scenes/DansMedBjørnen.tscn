@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DansMedBjørnenManager.gd" id="1_b04rf"]
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DancingBear.gd" id="2_vs3ym"]
 [ext_resource type="Texture2D" uid="uid://cno2rs6tnn0rv" path="res://DansMedBjørner/Sprites/Bear_Dancing.png" id="2_xsbih"]
-[ext_resource type="Script" path="res://DansMedBjørner/Scenes/DancingPlayer.gd" id="3_p81bm"]
+[ext_resource type="Script" path="res://DansMedBjørner/Scripts/DancingPlayer.gd" id="4_qii0i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lanfp"]
 font_size = 100
@@ -27,7 +27,7 @@ hframes = 5
 script = ExtResource("2_vs3ym")
 
 [node name="DancingPlayer" type="Node2D" parent="."]
-script = ExtResource("3_p81bm")
+script = ExtResource("4_qii0i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
