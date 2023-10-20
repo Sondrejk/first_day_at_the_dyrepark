@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://2vskchnd50cw"]
+[gd_scene load_steps=13 format=3 uid="uid://2vskchnd50cw"]
 
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DansMedBjørnenManager.gd" id="1_b04rf"]
+[ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://DansMedBjørner/Sprites/Backgroud/KHB_sky.png" id="2_bqxsa"]
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DancingBear.gd" id="2_vs3ym"]
 [ext_resource type="Texture2D" uid="uid://cno2rs6tnn0rv" path="res://DansMedBjørner/Sprites/Bear_Dancing.png" id="2_xsbih"]
+[ext_resource type="PackedScene" uid="uid://cpojve8u1o8ve" path="res://General Use/Clouds/cloud.tscn" id="3_f21dk"]
+[ext_resource type="Texture2D" uid="uid://defqijlubq8cl" path="res://DansMedBjørner/Sprites/Backgroud/DMB_fjell.png" id="3_sdq8d"]
+[ext_resource type="Texture2D" uid="uid://crnpgboek7b5e" path="res://DansMedBjørner/Sprites/Backgroud/DMB_Main_Stone.png" id="4_o5dcm"]
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DancingPlayer.gd" id="4_qii0i"]
+[ext_resource type="Texture2D" uid="uid://dqlxn4vjhwcn" path="res://DansMedBjørner/Sprites/Backgroud/DMB_Foreground_Grass.png" id="8_jy0jx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lanfp"]
 font_size = 100
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ykrf"]
 line_spacing = 0.0
@@ -20,7 +27,42 @@ font_size = 40
 script = ExtResource("1_b04rf")
 dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
 
+[node name="Background" type="Node2D" parent="."]
+
+[node name="KhbSky" type="Sprite2D" parent="Background"]
+scale = Vector2(8, 8)
+texture = ExtResource("2_bqxsa")
+
+[node name="Starter_Clouds" type="Node2D" parent="Background"]
+
+[node name="Cloud" parent="Background/Starter_Clouds" instance=ExtResource("3_f21dk")]
+position = Vector2(522, -362)
+
+[node name="Cloud2" parent="Background/Starter_Clouds" instance=ExtResource("3_f21dk")]
+position = Vector2(253, -250)
+
+[node name="Cloud3" parent="Background/Starter_Clouds" instance=ExtResource("3_f21dk")]
+position = Vector2(134, -318)
+
+[node name="Cloud4" parent="Background/Starter_Clouds" instance=ExtResource("3_f21dk")]
+position = Vector2(-173, -341)
+
+[node name="Cloud5" parent="Background/Starter_Clouds" instance=ExtResource("3_f21dk")]
+position = Vector2(-432, -225)
+
+[node name="Cloud6" parent="Background/Starter_Clouds" instance=ExtResource("3_f21dk")]
+position = Vector2(-596, -306)
+
+[node name="DmbFjell" type="Sprite2D" parent="Background"]
+scale = Vector2(8, 8)
+texture = ExtResource("3_sdq8d")
+
+[node name="DmbMainStone" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("4_o5dcm")
+
 [node name="DancingBear" type="Sprite2D" parent="."]
+position = Vector2(0, -298)
 scale = Vector2(10, 10)
 texture = ExtResource("2_xsbih")
 hframes = 5
@@ -76,6 +118,10 @@ text = "Til Dyrehagen"
 [node name="QuitToMenu" type="Button" parent="GameOverScreen"]
 layout_mode = 2
 text = "Til Hovedmenyen"
+
+[node name="DmbForegroundGrass" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("8_jy0jx")
 
 [connection signal="button_down" from="GameOverScreen/RestartGame" to="." method="_on_restart_game_button_down"]
 [connection signal="button_down" from="GameOverScreen/QuitToDyrehage" to="." method="_on_quit_to_dyrehage_button_down"]

@@ -13,9 +13,30 @@
 position = Vector2(122, 0)
 minigame_scene = "res://KlappHunden/Scenes/KlappHunden.tscn"
 
+[node name="ColorRect" type="ColorRect" parent="KlappHundenTrigger"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.372549, 0.909804, 0.854902, 1)
+
 [node name="DansMedBjørnenTrigger" parent="." instance=ExtResource("2_62uxn")]
 position = Vector2(122, 96)
+
+[node name="ColorRect2" type="ColorRect" parent="DansMedBjørnenTrigger"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.372549, 0.909804, 0.854902, 1)
 
 [node name="ReddRudolfTrigger" parent="." instance=ExtResource("2_62uxn")]
 position = Vector2(122, 188)
 minigame_scene = "res://ReddRudolf/ReddRudolf.tscn"
+
+[node name="ColorRect3" type="ColorRect" parent="ReddRudolfTrigger"]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+color = Color(0.372549, 0.909804, 0.854902, 1)
