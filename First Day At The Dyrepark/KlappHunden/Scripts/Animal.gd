@@ -6,7 +6,7 @@ class_name Animal
 @export var start_speed : float = 200
 @export var move_speed : float = start_speed
 @export var petted : bool = false
-var start_position = Vector2(-800, 100)
+var start_position = Vector2(-800, 256)
 
 # Moves the animal across the screen, can give exact x position
 func walk_to_target(delta : float, target : float):
