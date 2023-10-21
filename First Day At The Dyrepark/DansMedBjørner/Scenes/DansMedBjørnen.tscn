@@ -27,6 +27,8 @@ font_size = 40
 script = ExtResource("1_b04rf")
 dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Background" type="Node2D" parent="."]
 
 [node name="KhbSky" type="Sprite2D" parent="Background"]
@@ -71,15 +73,14 @@ script = ExtResource("2_vs3ym")
 [node name="DancingPlayer" type="Node2D" parent="."]
 script = ExtResource("4_qii0i")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="ScoreText" type="Label" parent="."]
-offset_left = -629.0
-offset_top = -502.0
-offset_right = -202.0
-offset_bottom = -362.0
-text = "SCORE: 0"
+offset_left = -220.0
+offset_top = 171.0
+offset_right = 207.0
+offset_bottom = 311.0
+text = "0"
 label_settings = SubResource("LabelSettings_lanfp")
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="GameOverScreen" type="VBoxContainer" parent="."]

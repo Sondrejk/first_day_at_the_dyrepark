@@ -19,11 +19,11 @@ font_size = 40
 script = ExtResource("1_762ro")
 dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
 
-[node name="KhbSky" type="Sprite2D" parent="."]
+[node name="Sky" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
 texture = ExtResource("2_iwj67")
 
-[node name="KhbGround" type="Sprite2D" parent="."]
+[node name="Ground" type="Sprite2D" parent="."]
 z_index = 1
 scale = Vector2(8, 8)
 texture = ExtResource("3_4a17s")

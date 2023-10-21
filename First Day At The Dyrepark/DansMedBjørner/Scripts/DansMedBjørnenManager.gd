@@ -16,7 +16,7 @@ var score : int = 0
 
 func add_score(amount):
 	score += amount
-	score_node.text = str("SCORE: ", score)
+	score_node.text = str(score)
 
 func game_over():
 	is_game_active = false
