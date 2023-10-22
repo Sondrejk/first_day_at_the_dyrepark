@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cti3onrm460wg"]
+[gd_scene load_steps=16 format=3 uid="uid://cti3onrm460wg"]
 
 [ext_resource type="Script" path="res://Dyrepark/Scripts/Player.gd" id="1_liu0p"]
+[ext_resource type="Texture2D" uid="uid://crmt0urw8imsr" path="res://Dyrepark/Sprites/Base Animation for 32x48-Sheet.png" id="2_p1wgy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d6cu1"]
 size = Vector2(64, 64)
@@ -8,11 +9,206 @@ size = Vector2(64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pql74"]
 size = Vector2(64, 64)
 
+[sub_resource type="Animation" id="Animation_j3npi"]
+resource_name = "Front_I"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ntlcy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ayilg"]
+resource_name = "Front_W"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 3, 0]
+}
+
+[sub_resource type="Animation" id="Animation_q7808"]
+resource_name = "Front_R"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 1, 0, 3, 4, 3, 0]
+}
+
+[sub_resource type="Animation" id="Animation_ucf86"]
+resource_name = "Side_I"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_1celw"]
+resource_name = "Side_W"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 5, 8, 5]
+}
+
+[sub_resource type="Animation" id="Animation_r3ajs"]
+resource_name = "Side_R"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 6, 5, 8, 9, 8, 5]
+}
+
+[sub_resource type="Animation" id="Animation_3bf36"]
+resource_name = "Back_I"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_lcfr5"]
+resource_name = "Back_W"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [11, 10, 13, 10]
+}
+
+[sub_resource type="Animation" id="Animation_eu185"]
+resource_name = "Back_R"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 12, 11, 10, 13, 14, 13, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bq5hc"]
+_data = {
+"Back_I": SubResource("Animation_3bf36"),
+"Back_R": SubResource("Animation_eu185"),
+"Back_W": SubResource("Animation_lcfr5"),
+"Front_I": SubResource("Animation_j3npi"),
+"Front_R": SubResource("Animation_q7808"),
+"Front_W": SubResource("Animation_ayilg"),
+"RESET": SubResource("Animation_ntlcy"),
+"Side_I": SubResource("Animation_ucf86"),
+"Side_R": SubResource("Animation_r3ajs"),
+"Side_W": SubResource("Animation_1celw")
+}
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_liu0p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = SubResource("PlaceholderTexture2D_d6cu1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pql74")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_p1wgy")
+hframes = 15
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 2.5
+libraries = {
+"": SubResource("AnimationLibrary_bq5hc")
+}
