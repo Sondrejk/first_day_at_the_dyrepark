@@ -36,6 +36,7 @@ func _process(delta):
 	elif walk_to_target(delta, 0) and Input.is_key_label_pressed(KEY_I):
 		walk(delta)
 		game_manager.add_score(1)
+		game_manager.spawn_particle_explosion(Vector2(0, -75))
 	elif walk_to_target(delta, 0) and Input.is_key_label_pressed(KEY_O):
 		game_manager.game_over()
 		

@@ -3,6 +3,7 @@ extends Node2D
 # References to scenes
 var dog_scene = preload("res://KlappHunden/Scenes/Dog.tscn")
 var bear_scene = preload("res://KlappHunden/Scenes/Bear.tscn")
+var particle_scene = preload("res://KlappHunden/Scenes/KlappHundenParticleExplosion.tscn")
 
 # References to files
 @export_file("*.tscn") var dyrehage_scene
@@ -38,8 +39,6 @@ func _process(_delta):
 	spawn_timer.wait_time = 75/(game_time + 25)
 	game_speed = 0.02 * game_time + 1
 	
-	
-
 # Adds score and updates the score text
 func add_score(amount):
 	score += amount
@@ -56,3 +55,9 @@ func _on_restart_game_button_down():
 
 func _on_quit_to_dyrehage_button_down():
 	get_tree().change_scene_to_file(dyrehage_scene)
+
+# Spawns the star explosion particle effect at a position
+func spawn_particle_explosion(position : Vector2):
+	var particle_explosion_instance = particle_scene.instantiate()
+	particle_explosion_instance.global_position = position
+	add_child(particle_explosion_instance)

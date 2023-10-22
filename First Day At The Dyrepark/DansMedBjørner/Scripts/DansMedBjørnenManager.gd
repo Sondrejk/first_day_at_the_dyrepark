@@ -10,6 +10,10 @@ extends Node2D
 @onready var bear : Sprite2D = $DancingBear
 @onready var player : Node2D = $DancingPlayer
 
+# Scenes
+
+var particle_scene = preload("res://DansMedBjørner/Scenes/DansMedBjørnenParticleExplosion.tscn")
+
 # Variables
 var is_game_active : bool = true
 var score : int = 0
@@ -18,12 +22,17 @@ func add_score(amount):
 	score += amount
 	score_node.text = str(score)
 
+func spawn_particle_explosion(position : Vector2):
+	var particle_effect_instance = particle_scene.instantiate()
+	particle_effect_instance.global_position = position
+	add_child(particle_effect_instance)
+
 func game_over():
 	is_game_active = false
 	bear.hide()
 	player.hide()
 	score_node.hide()
-	game_over_score_node.text = score_node.text
+	game_over_score_node.text = str("SCORE: ", score)
 	game_over_screen_node.show()
 	
 # Game over menu buttons
