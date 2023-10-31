@@ -16,8 +16,9 @@ var timer : float = time_between_dances			# Timer that enables the loop in the p
 
 
 # Function to append a random dance move from the possible ones to the bear dance move list
-func add_random_dance_move():
-	bear_dance_moves.append(possible_dance_moves[randi_range(0, len(possible_dance_moves)-1)])
+func add_random_dance_move(num : int):
+	for i in num:
+		bear_dance_moves.append(possible_dance_moves[randi_range(0, len(possible_dance_moves)-1)])
 
 # Executes a certain move given a list and number
 func execute_move(list_of_moves, num):
@@ -31,7 +32,7 @@ func execute_move(list_of_moves, num):
 		frame = 2
 
 func _ready():
-	add_random_dance_move()
+	add_random_dance_move(1)
 
 func _process(delta):
 	if game_manager.is_game_active:

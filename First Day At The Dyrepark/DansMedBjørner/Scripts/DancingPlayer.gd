@@ -3,6 +3,7 @@ extends Node2D
 @onready var bear = $"../DancingBear"	# Connection to the bear node to get the dance info
 @onready var game_manager = $".."
 var player_dance_moves : Array			# Growing array of the players dance moves
+var moves_in_dance : int = 1
 
 func _process(_delta):
 	if game_manager.is_game_active:
@@ -26,7 +27,9 @@ func _process(_delta):
 				if player_dance_moves == bear.bear_dance_moves:
 					player_dance_moves = []
 					bear.player_turn = false
-					bear.add_random_dance_move()
+					bear.bear_dance_moves = []
+					moves_in_dance += 1
+					bear.add_random_dance_move(moves_in_dance)
 					game_manager.add_score(1)
 					game_manager.spawn_particle_explosion(Vector2(0, 250))
 				elif player_dance_moves[-1] != bear.bear_dance_moves[len(player_dance_moves)-1]:
