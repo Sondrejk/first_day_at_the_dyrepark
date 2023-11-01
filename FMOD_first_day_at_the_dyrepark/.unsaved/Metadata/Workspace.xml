@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{2db49987-6029-4159-b07f-de6317aa50e5}">
+		<property name="builtBanksOutputDirectory">
+			<value>../First Day At The Dyrepark/Banks</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{0e5eec64-22cf-4d96-8ac1-abcd745ea63d}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{d8f15b28-8e95-4896-8534-090a750b917f}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{8d4a17cb-546c-4388-9780-ef81bb6292fa}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{07fc5f20-d76b-434b-8ef2-713726e0668f}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{d134935c-2acc-4d42-a2dd-0d6124c2c551}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{5290f138-584f-4b4f-ae2a-dec7b788b7e4}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{e302e86a-bf97-4946-bd8a-6e83b665e1cf}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{7237a6dc-df8b-4274-8268-858309f06e48}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{27c07880-5d5b-49cc-bc92-2c19e099018b}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{aea3e284-2923-4280-8c4d-c560c72f6172}</destination>
+		</relationship>
+	</object>
+</objects>
