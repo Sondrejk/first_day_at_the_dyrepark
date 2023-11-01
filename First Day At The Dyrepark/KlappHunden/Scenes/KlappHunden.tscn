@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjrf1oo0txpmn"]
+[gd_scene load_steps=9 format=3 uid="uid://cjrf1oo0txpmn"]
 
 [ext_resource type="Script" path="res://KlappHunden/Scripts/KlappHundenManager.gd" id="1_762ro"]
 [ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://DansMedBjørner/Sprites/Backgroud/KHB_sky.png" id="2_iwj67"]
 [ext_resource type="Texture2D" uid="uid://ceenq3t7wsh3d" path="res://KlappHunden/Sprites/BG/KHB_Ground.png" id="3_4a17s"]
+[ext_resource type="BankAsset" uid="uid://uju811oy187b" path="res://addons/FMOD/editor/resources/banks/{c6ddbc0f-9107-43d1-9314-010294b753fc}.tres" id="4_lrpxb"]
+[ext_resource type="BankAsset" uid="uid://c24s7tbeej0wc" path="res://addons/FMOD/editor/resources/banks/{5ec09cdb-e07c-0f93-155d-8bfc65445564}.tres" id="5_lj3pg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0vpii"]
 font_size = 100
@@ -33,6 +35,8 @@ wait_time = 2.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StudioListener2D" type="StudioListener2D" parent="Camera2D"]
 
 [node name="ScoreText" type="Label" parent="."]
 offset_left = -629.0
@@ -79,6 +83,16 @@ text = "Til Dyrehagen"
 [node name="QuitToMenu" type="Button" parent="GameOverScreen"]
 layout_mode = 2
 text = "Til Hovedmenyen"
+
+[node name="FMOD" type="Node2D" parent="."]
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="FMOD"]
+load_on = 1
+unload_on = 3
+preload_sample_data = true
+num_banks = 2
+bank_0 = ExtResource("4_lrpxb")
+bank_1 = ExtResource("5_lj3pg")
 
 [connection signal="timeout" from="AnimalSpawnTimer" to="." method="_on_animal_spawn_timer_timeout"]
 [connection signal="button_down" from="GameOverScreen/RestartGame" to="." method="_on_restart_game_button_down"]

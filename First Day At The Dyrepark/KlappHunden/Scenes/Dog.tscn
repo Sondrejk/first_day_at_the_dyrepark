@@ -1,8 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxm6nnnv6dk3a"]
+[gd_scene load_steps=11 format=3 uid="uid://bxm6nnnv6dk3a"]
 
 [ext_resource type="PackedScene" uid="uid://bgn6vk30tnekw" path="res://KlappHunden/Scenes/Animal.tscn" id="1_icm1r"]
 [ext_resource type="Script" path="res://KlappHunden/Scripts/Dog.gd" id="2_ylnp0"]
 [ext_resource type="Texture2D" uid="uid://do65k3ctt03kv" path="res://KlappHunden/Sprites/Hund_1.png" id="3_we7nq"]
+
+[sub_resource type="EventAsset" id="EventAsset_qe2ld"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Klapp"
+guid = "{a52caa4f-431e-45f2-a710-f177f5b7caf5}"
+name = "Klapp"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amimq"]
 size = Vector2(9, 13)
@@ -83,6 +91,7 @@ _data = {
 [node name="Dog" instance=ExtResource("1_icm1r")]
 scale = Vector2(5, 5)
 script = ExtResource("2_ylnp0")
+event_clap = SubResource("EventAsset_qe2ld")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(1, 0.999985)

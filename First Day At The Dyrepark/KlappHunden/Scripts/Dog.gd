@@ -7,6 +7,9 @@ var Hund1 = preload("res://KlappHunden/Sprites/Hund_1.png")
 var Hund2 = preload("res://KlappHunden/Sprites/Hund_2.png")
 var Hund3 = preload("res://KlappHunden/Sprites/Hund_3.png")
 
+@export_subgroup("Audio")
+@export var event_clap : EventAsset
+
 # Changes texture based on input number
 func change_texture(num):
 	if num == 1:
@@ -37,6 +40,7 @@ func _process(delta):
 		walk(delta)
 		game_manager.add_score(1)
 		game_manager.spawn_particle_explosion(Vector2(0, -75))
+		FMODRuntime.play_one_shot(event_clap, self)
 	elif walk_to_target(delta, 0) and Input.is_key_label_pressed(KEY_O):
 		game_manager.game_over()
 		
