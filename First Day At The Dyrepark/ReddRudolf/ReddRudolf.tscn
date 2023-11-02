@@ -83,3 +83,5 @@ layout_mode = 2
 text = "Til Hovedmenyen"
 
 [connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_obstacle_spawn_timer_timeout"]
+[connection signal="button_down" from="GameOverScreen/RestartGame" to="." method="_on_restart_game_button_down"]
+[connection signal="button_down" from="GameOverScreen/QuitToDyrehage" to="." method="_on_quit_to_dyrehage_button_down"]
