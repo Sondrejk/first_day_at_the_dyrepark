@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cti3onrm460wg"]
 
 [ext_resource type="Script" path="res://Dyrepark/Scripts/Player.gd" id="1_liu0p"]
-[ext_resource type="Texture2D" uid="uid://crmt0urw8imsr" path="res://Dyrepark/Sprites/Base Animation for 32x48-Sheet.png" id="2_p1wgy"]
+[ext_resource type="Texture2D" uid="uid://ch78gdjgtn32w" path="res://Dyrepark/Sprites/Zoo Worker with outline.png" id="2_3ulun"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d6cu1"]
 size = Vector2(64, 64)
@@ -204,7 +204,7 @@ shape = SubResource("RectangleShape2D_pql74")
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
 scale = Vector2(2, 2)
-texture = ExtResource("2_p1wgy")
+texture = ExtResource("2_3ulun")
 hframes = 15
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
