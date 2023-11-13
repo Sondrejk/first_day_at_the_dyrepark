@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://hewf6cdwui70"]
+[gd_scene load_steps=14 format=3 uid="uid://hewf6cdwui70"]
 
 [ext_resource type="Script" path="res://ReddRudolf/ReddRudolfManager.gd" id="1_wxx8a"]
 [ext_resource type="PackedScene" uid="uid://ctpqc75nl8agi" path="res://ReddRudolf/ReddRudolfSlede.tscn" id="2_0m5s8"]
 [ext_resource type="Script" path="res://ReddRudolf/HundBak.gd" id="3_ieqtg"]
 [ext_resource type="Script" path="res://ReddRudolf/HundForan.gd" id="4_cj7yg"]
+[ext_resource type="PackedScene" uid="uid://b3n5bwy2g6aeb" path="res://ReddRudolf/ReddRudolfParallax.tscn" id="5_dm1dw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_um477"]
 size = Vector2(64, 64)
@@ -35,7 +36,11 @@ font_size = 40
 script = ExtResource("1_wxx8a")
 dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="ReddRudolfParallax" parent="." instance=ExtResource("5_dm1dw")]
+offset = Vector2(0, 0)
+transform = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="ReddRudolfParallax"]
 
 [node name="ReddRudolfPlayer" type="Node2D" parent="."]
 

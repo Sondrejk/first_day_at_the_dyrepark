@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://2vskchnd50cw"]
 
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DansMedBjørnenManager.gd" id="1_b04rf"]
-[ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://DansMedBjørner/Sprites/Backgroud/KHB_sky.png" id="2_bqxsa"]
+[ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://ReddRudolf/ReddRudolfBakgrunn.png" id="2_bqxsa"]
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DancingBear.gd" id="2_vs3ym"]
 [ext_resource type="Texture2D" uid="uid://cno2rs6tnn0rv" path="res://DansMedBjørner/Sprites/Bear_Dancing.png" id="2_xsbih"]
 [ext_resource type="PackedScene" uid="uid://cpojve8u1o8ve" path="res://General Use/Clouds/cloud.tscn" id="3_f21dk"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://celtyg7pnra6b"
-path="res://.godot/imported/KHB_sky.png-367a9e8a45137722940773f65a29bc76.ctex"
+path="res://.godot/imported/ReddRudolfBakgrunn.png-2b183e862c53b13644e79b195f5d7639.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DansMedBjørner/Sprites/Backgroud/KHB_sky.png"
-dest_files=["res://.godot/imported/KHB_sky.png-367a9e8a45137722940773f65a29bc76.ctex"]
+source_file="res://ReddRudolf/ReddRudolfBakgrunn.png"
+dest_files=["res://.godot/imported/ReddRudolfBakgrunn.png-2b183e862c53b13644e79b195f5d7639.ctex"]
 
 [params]
 
