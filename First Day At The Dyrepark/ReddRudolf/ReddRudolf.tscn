@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://hewf6cdwui70"]
 
 [ext_resource type="Script" path="res://ReddRudolf/ReddRudolfManager.gd" id="1_wxx8a"]
-[ext_resource type="PackedScene" uid="uid://byocx3ffwn6ow" path="res://ReddRudolf/ReddRudolfSlede.tscn" id="2_0m5s8"]
+[ext_resource type="PackedScene" uid="uid://ctpqc75nl8agi" path="res://ReddRudolf/ReddRudolfSlede.tscn" id="2_0m5s8"]
 [ext_resource type="Script" path="res://ReddRudolf/HundBak.gd" id="3_ieqtg"]
 [ext_resource type="Script" path="res://ReddRudolf/HundForan.gd" id="4_cj7yg"]
 

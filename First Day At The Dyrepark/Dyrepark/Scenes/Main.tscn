@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b2yixido73set"]
 
-[ext_resource type="PackedScene" uid="uid://cti3onrm460wg" path="res://Dyrepark/Scenes/Player.tscn" id="1_e82br"]
+[ext_resource type="PackedScene" uid="uid://bdukeos84wa3" path="res://Dyrepark/Scenes/Player.tscn" id="1_e82br"]
 [ext_resource type="PackedScene" uid="uid://b2aqovuuekejs" path="res://Dyrepark/Scenes/KlappHundenTrigger.tscn" id="2_62uxn"]
 [ext_resource type="Texture2D" uid="uid://dlpd342hdphce" path="res://Dyrepark/Sprites/Tilemaps/Tilemaps_main/Tilemap/tileset_Tilemap.png" id="3_rhptb"]
 [ext_resource type="Texture2D" uid="uid://dsswn1asd5mph" path="res://Dyrepark/Sprites/Welcomeboard.png" id="4_dmbtq"]
