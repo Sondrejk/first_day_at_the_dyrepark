@@ -1,7 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://hewf6cdwui70"]
+[gd_scene load_steps=13 format=3 uid="uid://hewf6cdwui70"]
 
 [ext_resource type="Script" path="res://ReddRudolf/ReddRudolfManager.gd" id="1_wxx8a"]
-[ext_resource type="PackedScene" uid="uid://byocx3ffwn6ow" path="res://ReddRudolf/ReddRudolfPlayer.tscn" id="2_0m5s8"]
+[ext_resource type="PackedScene" uid="uid://byocx3ffwn6ow" path="res://ReddRudolf/ReddRudolfSlede.tscn" id="2_0m5s8"]
+[ext_resource type="Script" path="res://ReddRudolf/HundBak.gd" id="3_ieqtg"]
+[ext_resource type="Script" path="res://ReddRudolf/HundForan.gd" id="4_cj7yg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_um477"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bar1l"]
+size = Vector2(64, 64)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pe3lg"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnnyl"]
+size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrdgh"]
 size = Vector2(1319.5, 20)
@@ -23,8 +37,30 @@ dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="ReddRudolfPlayer" parent="." instance=ExtResource("2_0m5s8")]
-position = Vector2(-290, -1)
+[node name="ReddRudolfPlayer" type="Node2D" parent="."]
+
+[node name="ReddRudolfSlede" parent="ReddRudolfPlayer" instance=ExtResource("2_0m5s8")]
+position = Vector2(-537, -1)
+
+[node name="HundBak" type="CharacterBody2D" parent="ReddRudolfPlayer"]
+position = Vector2(-409, 0)
+script = ExtResource("3_ieqtg")
+
+[node name="Sprite2D" type="Sprite2D" parent="ReddRudolfPlayer/HundBak"]
+texture = SubResource("PlaceholderTexture2D_um477")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReddRudolfPlayer/HundBak"]
+shape = SubResource("RectangleShape2D_bar1l")
+
+[node name="HundForan" type="CharacterBody2D" parent="ReddRudolfPlayer"]
+position = Vector2(-280, 0)
+script = ExtResource("4_cj7yg")
+
+[node name="Sprite2D" type="Sprite2D" parent="ReddRudolfPlayer/HundForan"]
+texture = SubResource("PlaceholderTexture2D_pe3lg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReddRudolfPlayer/HundForan"]
+shape = SubResource("RectangleShape2D_bnnyl")
 
 [node name="ObstacleSpawnTimer" type="Timer" parent="."]
 wait_time = 3.0

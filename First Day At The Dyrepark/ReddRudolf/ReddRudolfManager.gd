@@ -8,7 +8,7 @@ var obstacle_scene = preload("res://ReddRudolf/ReddRudolfObstacle.tscn")
 
 # References to nodes
 @onready var score_text : Label = $ScoreText
-@onready var player : CharacterBody2D = $ReddRudolfPlayer
+@onready var player : Node2D = $ReddRudolfPlayer
 @onready var game_over_screen = $GameOverScreen
 @onready var game_over_score_text : Label = $GameOverScreen/GameOverScoreText
 @onready var spawn_timer : Timer = $ObstacleSpawnTimer
