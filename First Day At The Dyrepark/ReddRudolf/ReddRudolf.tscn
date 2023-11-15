@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://hewf6cdwui70"]
+[gd_scene load_steps=21 format=3 uid="uid://hewf6cdwui70"]
 
 [ext_resource type="Script" path="res://ReddRudolf/ReddRudolfManager.gd" id="1_wxx8a"]
 [ext_resource type="PackedScene" uid="uid://ctpqc75nl8agi" path="res://ReddRudolf/ReddRudolfSlede.tscn" id="2_0m5s8"]
@@ -6,10 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://ReddRudolf/ReddRudolfBakgrunn.png" id="3_j5uc2"]
 [ext_resource type="Script" path="res://ReddRudolf/HundForan.gd" id="4_cj7yg"]
 [ext_resource type="PackedScene" uid="uid://b3n5bwy2g6aeb" path="res://ReddRudolf/ReddRudolfParallax.tscn" id="5_dm1dw"]
-[ext_resource type="PackedScene" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
+[ext_resource type="PackedScene" uid="uid://clxlyde7effg1" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
 [ext_resource type="Texture2D" uid="uid://b8ykjq1brqufe" path="res://ReddRudolf/Tilemap.png" id="7_kbj8e"]
 [ext_resource type="Shortcut" uid="uid://dyae28g1lcisu" path="res://General Use/Restart.tres" id="9_s4cgw"]
 [ext_resource type="Shortcut" uid="uid://dx8s541me2r6j" path="res://General Use/QuitDyrehage.tres" id="10_cm4sl"]
+[ext_resource type="Script" path="res://ReddRudolf/ParallaxBackground_Speed.gd" id="10_vrapq"]
+[ext_resource type="PackedScene" uid="uid://cpojve8u1o8ve" path="res://General Use/Clouds/cloud.tscn" id="11_okxcu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bar1l"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnnyl"]
+size = Vector2(64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjcsw"]
 texture = ExtResource("7_kbj8e")
@@ -349,12 +357,6 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.560784, 0.0705882, 0.745098, 1)
 sources/0 = SubResource("TileSetAtlasSource_gjcsw")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bar1l"]
-size = Vector2(64, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnnyl"]
-size = Vector2(64, 64)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrdgh"]
 size = Vector2(1319.5, 20)
 
@@ -373,19 +375,28 @@ font_size = 40
 script = ExtResource("1_wxx8a")
 dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
 
+[node name="Cloud" parent="." instance=ExtResource("11_okxcu")]
+position = Vector2(507, -169)
+
+[node name="Cloud2" parent="." instance=ExtResource("11_okxcu")]
+position = Vector2(307, -396)
+
+[node name="Cloud3" parent="." instance=ExtResource("11_okxcu")]
+position = Vector2(44, -185)
+
+[node name="Cloud4" parent="." instance=ExtResource("11_okxcu")]
+position = Vector2(-265, -353)
+
+[node name="Cloud5" parent="." instance=ExtResource("11_okxcu")]
+position = Vector2(-562, -201)
+
 [node name="ReddRudolfParallax" parent="." instance=ExtResource("5_dm1dw")]
-visible = false
+scroll_ignore_camera_zoom = true
 
 [node name="ReddRudolfBakgrunn" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(8, 8)
 texture = ExtResource("3_j5uc2")
-
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(0, -84)
-scale = Vector2(8, 8)
-tile_set = SubResource("TileSet_ktrfy")
-format = 2
-layer_0/tile_data = PackedInt32Array(131078, 65536, 1, 65542, 65536, 0, 131077, 65536, 1, 65541, 65536, 0, 131076, 65536, 1, 65540, 65536, 0, 131075, 65536, 1, 65539, 65536, 0, 131074, 65536, 1, 65538, 65536, 0, 131073, 65536, 1, 65537, 65536, 0, 131072, 65536, 1, 65536, 65536, 0, 196607, 65536, 1, 131071, 65536, 0, 196606, 65536, 1, 131070, 65536, 0, 196605, 65536, 1, 131069, 65536, 0, 196604, 65536, 1, 131068, 65536, 0, 196603, 65536, 1, 131067, 65536, 0, 131093, 65536, 1, 65557, 65536, 0, 131092, 65536, 1, 65556, 65536, 0, 131091, 65536, 1, 65555, 65536, 0, 131090, 65536, 1, 65554, 65536, 0, 131089, 65536, 1, 65553, 65536, 0, 131088, 65536, 1, 65552, 65536, 0, 131087, 65536, 1, 65551, 65536, 0, 131086, 65536, 1, 65550, 65536, 0, 131085, 65536, 1, 65549, 65536, 0, 131084, 65536, 1, 65548, 65536, 0, 131083, 65536, 1, 65547, 65536, 0, 131082, 65536, 1, 65546, 65536, 0, 131081, 65536, 1, 65545, 65536, 0, 131080, 65536, 1, 65544, 65536, 0, 131079, 65536, 1, 65543, 65536, 0, 327701, 65536, 2, 262165, 65536, 1, 196629, 65536, 1, 327700, 65536, 2, 262164, 65536, 1, 196628, 65536, 1, 327699, 65536, 2, 262163, 65536, 1, 196627, 65536, 1, 327698, 65536, 2, 262162, 65536, 1, 196626, 65536, 1, 327697, 65536, 2, 262161, 65536, 1, 196625, 65536, 1, 327696, 65536, 2, 262160, 65536, 1, 196624, 65536, 1, 327695, 65536, 2, 262159, 65536, 1, 196623, 65536, 1, 327694, 65536, 2, 262158, 65536, 1, 196622, 65536, 1, 327693, 65536, 2, 262157, 65536, 1, 196621, 65536, 1, 327692, 65536, 2, 262156, 65536, 1, 196620, 65536, 1, 327691, 65536, 2, 262155, 65536, 1, 196619, 65536, 1, 327690, 65536, 2, 262154, 65536, 1, 196618, 65536, 1, 327689, 65536, 2, 262153, 65536, 1, 196617, 65536, 1, 327688, 65536, 2, 262152, 65536, 1, 196616, 65536, 1, 327687, 65536, 2, 262151, 65536, 1, 196615, 65536, 1, 327686, 65536, 2, 262150, 65536, 1, 196614, 65536, 1, 327685, 65536, 2, 262149, 65536, 1, 196613, 65536, 1, 327684, 65536, 2, 262148, 65536, 1, 196612, 65536, 1, 327683, 65536, 2, 262147, 65536, 1, 196611, 65536, 1, 327682, 65536, 2, 262146, 65536, 1, 196610, 65536, 1, 327681, 65536, 2, 262145, 65536, 1, 196609, 65536, 1, 327680, 65536, 2, 262144, 65536, 1, 196608, 65536, 1, 393215, 65536, 2, 327679, 65536, 1, 262143, 65536, 1, 393214, 65536, 2, 327678, 65536, 1, 262142, 65536, 1, 393213, 65536, 2, 327677, 65536, 1, 262141, 65536, 1, 393212, 65536, 2, 327676, 65536, 1, 262140, 65536, 1, 393211, 65536, 2, 327675, 65536, 1, 262139, 65536, 1, 393210, 0, 2, 327674, 0, 1, 262138, 0, 1, 196602, 0, 1, 131066, 0, 0, 327723, 131072, 2, 262187, 131072, 1, 196651, 131072, 1, 131115, 131072, 1, 65579, 131072, 0, 327722, 65536, 2, 262186, 65536, 1, 196650, 65536, 1, 131114, 65536, 1, 65578, 65536, 0, 327721, 65536, 2, 262185, 65536, 1, 196649, 65536, 1, 131113, 65536, 1, 65577, 65536, 0, 327720, 65536, 2, 262184, 65536, 1, 196648, 65536, 1, 131112, 65536, 1, 65576, 65536, 0, 327719, 65536, 2, 262183, 65536, 1, 196647, 65536, 1, 131111, 65536, 1, 65575, 65536, 0, 327718, 65536, 2, 262182, 65536, 1, 196646, 65536, 1, 131110, 65536, 1, 65574, 65536, 0, 327717, 65536, 2, 262181, 65536, 1, 196645, 65536, 1, 131109, 65536, 1, 65573, 65536, 0, 327716, 65536, 2, 262180, 65536, 1, 196644, 65536, 1, 131108, 65536, 1, 65572, 65536, 0, 327715, 65536, 2, 262179, 65536, 1, 196643, 65536, 1, 131107, 65536, 1, 65571, 65536, 0, 327714, 65536, 2, 262178, 65536, 1, 196642, 65536, 1, 131106, 65536, 1, 65570, 65536, 0, 327713, 65536, 2, 262177, 65536, 1, 196641, 65536, 1, 131105, 65536, 1, 65569, 65536, 0, 327712, 65536, 2, 262176, 65536, 1, 196640, 65536, 1, 131104, 65536, 1, 65568, 65536, 0, 327711, 65536, 2, 262175, 65536, 1, 196639, 65536, 1, 131103, 65536, 1, 65567, 65536, 0, 327710, 65536, 2, 262174, 65536, 1, 196638, 65536, 1, 131102, 65536, 1, 65566, 65536, 0, 327709, 65536, 2, 262173, 65536, 1, 196637, 65536, 1, 131101, 65536, 1, 65565, 65536, 0, 327708, 65536, 2, 262172, 65536, 1, 196636, 65536, 1, 131100, 65536, 1, 65564, 65536, 0, 327707, 65536, 2, 262171, 65536, 1, 196635, 65536, 1, 131099, 65536, 1, 65563, 65536, 0, 327706, 65536, 2, 262170, 65536, 1, 196634, 65536, 1, 131098, 65536, 1, 65562, 65536, 0, 327705, 65536, 2, 262169, 65536, 1, 196633, 65536, 1, 131097, 65536, 1, 65561, 65536, 0, 327704, 65536, 2, 262168, 65536, 1, 196632, 65536, 1, 131096, 65536, 1, 65560, 65536, 0, 327703, 65536, 2, 262167, 65536, 1, 196631, 65536, 1, 131095, 65536, 1, 65559, 65536, 0, 327702, 65536, 2, 262166, 65536, 1, 196630, 65536, 1, 131094, 65536, 1, 65558, 65536, 0)
 
 [node name="ReddRudolfPlayer" type="Node2D" parent="."]
 
@@ -400,20 +411,50 @@ script = ExtResource("3_ieqtg")
 shape = SubResource("RectangleShape2D_bar1l")
 
 [node name="Dog_Anim" parent="ReddRudolfPlayer/HundBak" instance=ExtResource("7_3asxo")]
+position = Vector2(0, 4)
 
 [node name="HundForan" type="CharacterBody2D" parent="ReddRudolfPlayer"]
 position = Vector2(-180, 0)
 script = ExtResource("4_cj7yg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReddRudolfPlayer/HundForan"]
-visible = false
 shape = SubResource("RectangleShape2D_bnnyl")
 
 [node name="Dog_Anim" parent="ReddRudolfPlayer/HundForan" instance=ExtResource("7_3asxo")]
+position = Vector2(0, 4)
 
 [node name="ObstacleSpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+position = Vector2(0, -86)
+scale = Vector2(8, 8)
+tile_set = SubResource("TileSet_ktrfy")
+format = 2
+layer_0/tile_data = PackedInt32Array(131076, 65536, 1, 65540, 65536, 0, 131075, 65536, 1, 65539, 65536, 0, 131074, 65536, 1, 65538, 65536, 0, 131073, 65536, 1, 65537, 65536, 0, 131072, 65536, 1, 65536, 65536, 0, 196607, 65536, 1, 131071, 65536, 0, 196606, 65536, 1, 131070, 65536, 0, 196605, 65536, 1, 131069, 65536, 0, 196604, 65536, 1, 131068, 65536, 0, 196603, 65536, 1, 131067, 65536, 0, 327684, 65536, 2, 262148, 65536, 1, 196612, 65536, 1, 327683, 65536, 2, 262147, 65536, 1, 196611, 65536, 1, 327682, 65536, 2, 262146, 65536, 1, 196610, 65536, 1, 327681, 65536, 2, 262145, 65536, 1, 196609, 65536, 1, 327680, 65536, 2, 262144, 65536, 1, 196608, 65536, 1, 393215, 65536, 2, 327679, 65536, 1, 262143, 65536, 1, 393214, 65536, 2, 327678, 65536, 1, 262142, 65536, 1, 393213, 65536, 2, 327677, 65536, 1, 262141, 65536, 1, 393212, 65536, 2, 327676, 65536, 1, 262140, 65536, 1, 393211, 65536, 2, 327675, 65536, 1, 262139, 65536, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("10_vrapq")
+scroll_speed = 500
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="TileMap2" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(0, -86)
+scale = Vector2(8, 8)
+tile_set = SubResource("TileSet_ktrfy")
+format = 2
+layer_0/tile_data = PackedInt32Array(131076, 65536, 1, 65540, 65536, 0, 131075, 65536, 1, 65539, 65536, 0, 131074, 65536, 1, 65538, 65536, 0, 131073, 65536, 1, 65537, 65536, 0, 131072, 65536, 1, 65536, 65536, 0, 196607, 65536, 1, 131071, 65536, 0, 196606, 65536, 1, 131070, 65536, 0, 196605, 65536, 1, 131069, 65536, 0, 196604, 65536, 1, 131068, 65536, 0, 196603, 65536, 1, 131067, 65536, 0, 327684, 65536, 2, 262148, 65536, 1, 196612, 65536, 1, 327683, 65536, 2, 262147, 65536, 1, 196611, 65536, 1, 327682, 65536, 2, 262146, 65536, 1, 196610, 65536, 1, 327681, 65536, 2, 262145, 65536, 1, 196609, 65536, 1, 327680, 65536, 2, 262144, 65536, 1, 196608, 65536, 1, 393215, 65536, 2, 327679, 65536, 1, 262143, 65536, 1, 393214, 65536, 2, 327678, 65536, 1, 262142, 65536, 1, 393213, 65536, 2, 327677, 65536, 1, 262141, 65536, 1, 393212, 65536, 2, 327676, 65536, 1, 262140, 65536, 1, 393211, 65536, 2, 327675, 65536, 1, 262139, 65536, 1)
+
+[node name="TileMap3" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1280, -86)
+scale = Vector2(8, 8)
+tile_set = SubResource("TileSet_ktrfy")
+format = 2
+layer_0/tile_data = PackedInt32Array(131076, 65536, 1, 65540, 65536, 0, 131075, 65536, 1, 65539, 65536, 0, 131074, 65536, 1, 65538, 65536, 0, 131073, 65536, 1, 65537, 65536, 0, 131072, 65536, 1, 65536, 65536, 0, 196607, 65536, 1, 131071, 65536, 0, 196606, 65536, 1, 131070, 65536, 0, 196605, 65536, 1, 131069, 65536, 0, 196604, 65536, 1, 131068, 65536, 0, 196603, 65536, 1, 131067, 65536, 0, 327684, 65536, 2, 262148, 65536, 1, 196612, 65536, 1, 327683, 65536, 2, 262147, 65536, 1, 196611, 65536, 1, 327682, 65536, 2, 262146, 65536, 1, 196610, 65536, 1, 327681, 65536, 2, 262145, 65536, 1, 196609, 65536, 1, 327680, 65536, 2, 262144, 65536, 1, 196608, 65536, 1, 393215, 65536, 2, 327679, 65536, 1, 262143, 65536, 1, 393214, 65536, 2, 327678, 65536, 1, 262142, 65536, 1, 393213, 65536, 2, 327677, 65536, 1, 262141, 65536, 1, 393212, 65536, 2, 327676, 65536, 1, 262140, 65536, 1, 393211, 65536, 2, 327675, 65536, 1, 262139, 65536, 1)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 

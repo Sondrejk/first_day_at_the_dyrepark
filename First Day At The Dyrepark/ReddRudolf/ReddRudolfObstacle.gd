@@ -7,8 +7,10 @@ var given_score : bool = false
 
 @onready var player = $"../ReddRudolfPlayer"
 @onready var game_manager = $".."
+@onready var sprites = $Obstacle
 
 func _ready():
+	sprites.frame = randi_range(0, 3)
 	position = start_position
 	
 

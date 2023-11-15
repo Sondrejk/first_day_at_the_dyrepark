@@ -17,15 +17,18 @@ var obstacle_scene = preload("res://ReddRudolf/ReddRudolfObstacle.tscn")
 var score : int = 0
 var game_time : float = 0
 var game_speed : float = 1
+var game_active = true
+
 
 func _on_obstacle_spawn_timer_timeout():
 	var obstacle_instance = obstacle_scene.instantiate()
 	add_child(obstacle_instance)
 
 func _process(delta):
-	game_time += delta
-	game_speed = 0.02 * game_time + 1
-	spawn_timer.wait_time = 75/(game_time + 25)
+	if game_active:
+		game_time += delta
+		game_speed = 0.02 * game_time + 1
+		spawn_timer.wait_time = 75/(game_time + 25)
 
 func addscore(num):
 	score += num
@@ -37,6 +40,9 @@ func game_over():
 	game_over_score_text.text = score_text.text
 	spawn_timer.stop()
 	game_over_screen.show()
+	game_active = false
+	game_speed = 0
+	
 
 func _on_restart_game_button_down():
 	get_tree().reload_current_scene()

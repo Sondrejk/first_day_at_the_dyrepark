@@ -15,15 +15,13 @@ func _process(delta):
 		velocity.y -= jump_velocity
 	#print(velocity.y + gravity * delta)
 	velocity.y += gravity * delta
-	if velocity.y < 5:
-		dog_anim.playing_animation = "jump"
-		print("jump")
-	elif velocity.y > 7:
-		dog_anim.playing_animation = "jump"
-		print("fall")
-	else:
+	if self.is_on_floor():
 		dog_anim.playing_animation = "walk"
-		print("walk")
+	else:
+		if velocity.y < 0:
+			dog_anim.playing_animation = "jump"
+		elif velocity.y > 0:
+			dog_anim.playing_animation = "fall"
 	
 	move_and_slide()
 
