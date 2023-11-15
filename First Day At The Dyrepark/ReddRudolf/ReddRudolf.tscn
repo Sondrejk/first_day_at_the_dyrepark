@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://ReddRudolf/ReddRudolfBakgrunn.png" id="3_j5uc2"]
 [ext_resource type="Script" path="res://ReddRudolf/HundForan.gd" id="4_cj7yg"]
 [ext_resource type="PackedScene" uid="uid://b3n5bwy2g6aeb" path="res://ReddRudolf/ReddRudolfParallax.tscn" id="5_dm1dw"]
-[ext_resource type="PackedScene" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
+[ext_resource type="PackedScene" uid="uid://clxlyde7effg1" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
 [ext_resource type="Texture2D" uid="uid://b8ykjq1brqufe" path="res://ReddRudolf/Tilemap.png" id="7_kbj8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjcsw"]

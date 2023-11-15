@@ -14,5 +14,5 @@ func _on_body_exited(_body):
 
 # Changes scene if the correct button is pressed
 func _process(_delta):
-	if is_player_in_trigger and Input.is_key_label_pressed(KEY_I):
+	if is_player_in_trigger and (Input.is_key_label_pressed(KEY_I) or Input.is_joy_button_pressed(0, JOY_BUTTON_B)):
 		get_tree().change_scene_to_file(minigame_scene)
