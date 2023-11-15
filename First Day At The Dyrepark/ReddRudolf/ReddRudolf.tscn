@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://hewf6cdwui70"]
+[gd_scene load_steps=17 format=3 uid="uid://hewf6cdwui70"]
 
 [ext_resource type="Script" path="res://ReddRudolf/ReddRudolfManager.gd" id="1_wxx8a"]
 [ext_resource type="PackedScene" uid="uid://ctpqc75nl8agi" path="res://ReddRudolf/ReddRudolfSlede.tscn" id="2_0m5s8"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://ReddRudolf/ReddRudolfBakgrunn.png" id="3_j5uc2"]
 [ext_resource type="Script" path="res://ReddRudolf/HundForan.gd" id="4_cj7yg"]
 [ext_resource type="PackedScene" uid="uid://b3n5bwy2g6aeb" path="res://ReddRudolf/ReddRudolfParallax.tscn" id="5_dm1dw"]
-[ext_resource type="PackedScene" uid="uid://clxlyde7effg1" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
+[ext_resource type="PackedScene" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
 [ext_resource type="Texture2D" uid="uid://b8ykjq1brqufe" path="res://ReddRudolf/Tilemap.png" id="7_kbj8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjcsw"]
@@ -347,13 +347,7 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.560784, 0.0705882, 0.745098, 1)
 sources/0 = SubResource("TileSetAtlasSource_gjcsw")
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_um477"]
-size = Vector2(64, 64)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bar1l"]
-size = Vector2(64, 64)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pe3lg"]
 size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnnyl"]
@@ -400,9 +394,6 @@ position = Vector2(-537, -1)
 position = Vector2(-359, 0)
 script = ExtResource("3_ieqtg")
 
-[node name="Sprite2D" type="Sprite2D" parent="ReddRudolfPlayer/HundBak"]
-texture = SubResource("PlaceholderTexture2D_um477")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReddRudolfPlayer/HundBak"]
 shape = SubResource("RectangleShape2D_bar1l")
 
@@ -411,9 +402,6 @@ shape = SubResource("RectangleShape2D_bar1l")
 [node name="HundForan" type="CharacterBody2D" parent="ReddRudolfPlayer"]
 position = Vector2(-180, 0)
 script = ExtResource("4_cj7yg")
-
-[node name="Sprite2D" type="Sprite2D" parent="ReddRudolfPlayer/HundForan"]
-texture = SubResource("PlaceholderTexture2D_pe3lg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReddRudolfPlayer/HundForan"]
 visible = false

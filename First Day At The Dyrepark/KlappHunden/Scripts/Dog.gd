@@ -36,12 +36,12 @@ func _process(delta):
 	# Movement logic
 	if position.x > 700:
 		despawn()
-	elif walk_to_target(delta, 0) and Input.is_key_label_pressed(KEY_I):
+	elif walk_to_target(delta, 0) and (Input.is_key_label_pressed(KEY_I) or Input.is_joy_button_pressed(0, JOY_BUTTON_B)):
 		walk(delta)
 		game_manager.add_score(1)
 		game_manager.spawn_particle_explosion(Vector2(0, -75))
 		FMODRuntime.play_one_shot(event_clap, self)
-	elif walk_to_target(delta, 0) and Input.is_key_label_pressed(KEY_O):
+	elif walk_to_target(delta, 0) and (Input.is_key_label_pressed(KEY_O) or Input.is_joy_button_pressed(0, JOY_BUTTON_Y)):
 		game_manager.game_over()
 		
 	# Animations

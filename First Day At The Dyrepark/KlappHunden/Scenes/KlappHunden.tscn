@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjrf1oo0txpmn"]
+[gd_scene load_steps=9 format=3 uid="uid://cjrf1oo0txpmn"]
 
 [ext_resource type="Script" path="res://KlappHunden/Scripts/KlappHundenManager.gd" id="1_762ro"]
+[ext_resource type="Texture2D" uid="uid://dbnqaeaw02u4r" path="res://KlappHunden/Sprites/BG/ReddRudolfBakgrunn.png" id="2_h0fic"]
 [ext_resource type="Texture2D" uid="uid://ceenq3t7wsh3d" path="res://KlappHunden/Sprites/BG/KHB_Ground.png" id="3_4a17s"]
 [ext_resource type="BankAsset" uid="uid://uju811oy187b" path="res://addons/FMOD/editor/resources/banks/{c6ddbc0f-9107-43d1-9314-010294b753fc}.tres" id="4_lrpxb"]
 [ext_resource type="BankAsset" uid="uid://c24s7tbeej0wc" path="res://addons/FMOD/editor/resources/banks/{5ec09cdb-e07c-0f93-155d-8bfc65445564}.tres" id="5_lj3pg"]
@@ -19,6 +20,10 @@ font_size = 40
 [node name="KlappHunden" type="Node2D"]
 script = ExtResource("1_762ro")
 dyrehage_scene = "res://Dyrepark/Scenes/Main.tscn"
+
+[node name="KHB" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("2_h0fic")
 
 [node name="Sky" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
