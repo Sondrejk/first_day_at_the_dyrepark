@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://2vskchnd50cw"]
+[gd_scene load_steps=15 format=3 uid="uid://2vskchnd50cw"]
 
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DansMedBjørnenManager.gd" id="1_b04rf"]
 [ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://ReddRudolf/ReddRudolfBakgrunn.png" id="2_bqxsa"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://crnpgboek7b5e" path="res://DansMedBjørner/Sprites/Backgroud/DMB_Main_Stone.png" id="4_o5dcm"]
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DancingPlayer.gd" id="4_qii0i"]
 [ext_resource type="Texture2D" uid="uid://dqlxn4vjhwcn" path="res://DansMedBjørner/Sprites/Backgroud/DMB_Foreground_Grass.png" id="8_jy0jx"]
+[ext_resource type="Shortcut" uid="uid://dyae28g1lcisu" path="res://General Use/Restart.tres" id="9_awck4"]
+[ext_resource type="Shortcut" uid="uid://dx8s541me2r6j" path="res://General Use/QuitDyrehage.tres" id="10_17yfu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lanfp"]
 font_size = 100
@@ -110,10 +112,12 @@ horizontal_alignment = 1
 
 [node name="RestartGame" type="Button" parent="GameOverScreen"]
 layout_mode = 2
+shortcut = ExtResource("9_awck4")
 text = "Spill Igjen"
 
 [node name="QuitToDyrehage" type="Button" parent="GameOverScreen"]
 layout_mode = 2
+shortcut = ExtResource("10_17yfu")
 text = "Til Dyrehagen"
 
 [node name="QuitToMenu" type="Button" parent="GameOverScreen"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://hewf6cdwui70"]
+[gd_scene load_steps=19 format=3 uid="uid://hewf6cdwui70"]
 
 [ext_resource type="Script" path="res://ReddRudolf/ReddRudolfManager.gd" id="1_wxx8a"]
 [ext_resource type="PackedScene" uid="uid://ctpqc75nl8agi" path="res://ReddRudolf/ReddRudolfSlede.tscn" id="2_0m5s8"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://ReddRudolf/ReddRudolfBakgrunn.png" id="3_j5uc2"]
 [ext_resource type="Script" path="res://ReddRudolf/HundForan.gd" id="4_cj7yg"]
 [ext_resource type="PackedScene" uid="uid://b3n5bwy2g6aeb" path="res://ReddRudolf/ReddRudolfParallax.tscn" id="5_dm1dw"]
-[ext_resource type="PackedScene" uid="uid://clxlyde7effg1" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
+[ext_resource type="PackedScene" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
 [ext_resource type="Texture2D" uid="uid://b8ykjq1brqufe" path="res://ReddRudolf/Tilemap.png" id="7_kbj8e"]
+[ext_resource type="Shortcut" uid="uid://dyae28g1lcisu" path="res://General Use/Restart.tres" id="9_s4cgw"]
+[ext_resource type="Shortcut" uid="uid://dx8s541me2r6j" path="res://General Use/QuitDyrehage.tres" id="10_cm4sl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjcsw"]
 texture = ExtResource("7_kbj8e")
@@ -455,10 +457,12 @@ horizontal_alignment = 1
 
 [node name="RestartGame" type="Button" parent="GameOverScreen"]
 layout_mode = 2
+shortcut = ExtResource("9_s4cgw")
 text = "Spill Igjen"
 
 [node name="QuitToDyrehage" type="Button" parent="GameOverScreen"]
 layout_mode = 2
+shortcut = ExtResource("10_cm4sl")
 text = "Til Dyrehagen"
 
 [node name="QuitToMenu" type="Button" parent="GameOverScreen"]

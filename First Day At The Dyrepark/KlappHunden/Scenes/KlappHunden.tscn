@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjrf1oo0txpmn"]
+[gd_scene load_steps=11 format=3 uid="uid://cjrf1oo0txpmn"]
 
 [ext_resource type="Script" path="res://KlappHunden/Scripts/KlappHundenManager.gd" id="1_762ro"]
 [ext_resource type="Texture2D" uid="uid://dbnqaeaw02u4r" path="res://KlappHunden/Sprites/BG/ReddRudolfBakgrunn.png" id="2_h0fic"]
 [ext_resource type="Texture2D" uid="uid://ceenq3t7wsh3d" path="res://KlappHunden/Sprites/BG/KHB_Ground.png" id="3_4a17s"]
+[ext_resource type="Shortcut" uid="uid://dyae28g1lcisu" path="res://General Use/Restart.tres" id="4_3115b"]
 [ext_resource type="BankAsset" uid="uid://uju811oy187b" path="res://addons/FMOD/editor/resources/banks/{c6ddbc0f-9107-43d1-9314-010294b753fc}.tres" id="4_lrpxb"]
+[ext_resource type="Shortcut" uid="uid://dx8s541me2r6j" path="res://General Use/QuitDyrehage.tres" id="5_j1ydd"]
 [ext_resource type="BankAsset" uid="uid://c24s7tbeej0wc" path="res://addons/FMOD/editor/resources/banks/{5ec09cdb-e07c-0f93-155d-8bfc65445564}.tres" id="5_lj3pg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0vpii"]
@@ -77,10 +79,12 @@ horizontal_alignment = 1
 
 [node name="RestartGame" type="Button" parent="GameOverScreen"]
 layout_mode = 2
+shortcut = ExtResource("4_3115b")
 text = "Spill Igjen"
 
 [node name="QuitToDyrehage" type="Button" parent="GameOverScreen"]
 layout_mode = 2
+shortcut = ExtResource("5_j1ydd")
 text = "Til Dyrehagen"
 
 [node name="QuitToMenu" type="Button" parent="GameOverScreen"]
