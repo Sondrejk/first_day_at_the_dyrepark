@@ -13,41 +13,44 @@ func _process(delta):
 [node name="ParallaxBackground" type="ParallaxBackground"]
 script = SubResource("GDScript_niav7")
 
-[node name="BG" type="Sprite2D" parent="."]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="BG" type="Sprite2D" parent="ParallaxLayer"]
 scale = Vector2(8, 8)
 texture = ExtResource("1_408oi")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+[node name="Clouds" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1280, 0)
 
-[node name="Cloud1" type="Sprite2D" parent="ParallaxLayer2"]
+[node name="Cloud1" type="Sprite2D" parent="Clouds"]
 position = Vector2(-386, -348)
 scale = Vector2(8, 8)
 texture = ExtResource("2_dvvy8")
 hframes = 6
 
-[node name="Cloud2" type="Sprite2D" parent="ParallaxLayer2"]
+[node name="Cloud2" type="Sprite2D" parent="Clouds"]
 position = Vector2(-408, 337)
 scale = Vector2(8, 8)
 texture = ExtResource("2_dvvy8")
 hframes = 6
 frame = 1
 
-[node name="Cloud3" type="Sprite2D" parent="ParallaxLayer2"]
+[node name="Cloud3" type="Sprite2D" parent="Clouds"]
 position = Vector2(305, -288)
 scale = Vector2(8, 8)
 texture = ExtResource("2_dvvy8")
 hframes = 6
 frame = 2
 
-[node name="Cloud4" type="Sprite2D" parent="ParallaxLayer2"]
+[node name="Cloud4" type="Sprite2D" parent="Clouds"]
 position = Vector2(245, 251)
 scale = Vector2(8, 8)
 texture = ExtResource("2_dvvy8")
 hframes = 6
 frame = 3
 
-[node name="Cloud5" type="Sprite2D" parent="ParallaxLayer2"]
+[node name="Cloud5" type="Sprite2D" parent="Clouds"]
 position = Vector2(-278, -86)
 scale = Vector2(8, 8)
 texture = ExtResource("2_dvvy8")
