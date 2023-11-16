@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjrf1oo0txpmn"]
+[gd_scene load_steps=12 format=3 uid="uid://cjrf1oo0txpmn"]
 
 [ext_resource type="Script" path="res://KlappHunden/Scripts/KlappHundenManager.gd" id="1_762ro"]
 [ext_resource type="Texture2D" uid="uid://dbnqaeaw02u4r" path="res://KlappHunden/Sprites/BG/ReddRudolfBakgrunn.png" id="2_h0fic"]
@@ -7,6 +7,7 @@
 [ext_resource type="BankAsset" uid="uid://uju811oy187b" path="res://addons/FMOD/editor/resources/banks/{c6ddbc0f-9107-43d1-9314-010294b753fc}.tres" id="4_lrpxb"]
 [ext_resource type="Shortcut" uid="uid://dx8s541me2r6j" path="res://General Use/QuitDyrehage.tres" id="5_j1ydd"]
 [ext_resource type="BankAsset" uid="uid://c24s7tbeej0wc" path="res://addons/FMOD/editor/resources/banks/{5ec09cdb-e07c-0f93-155d-8bfc65445564}.tres" id="5_lj3pg"]
+[ext_resource type="PackedScene" uid="uid://3cy2nohk4q06" path="res://Dyrepark/button_ind.tscn" id="8_ithcp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0vpii"]
 font_size = 100
@@ -77,17 +78,25 @@ text = "SCORE: 0"
 label_settings = SubResource("LabelSettings_kscc5")
 horizontal_alignment = 1
 
+[node name="Button_ind2" parent="GameOverScreen" instance=ExtResource("8_ithcp")]
+position = Vector2(202, 237.5)
+is_active = true
+b = [[true, "Play Again"], [false, ""], [false, ""], [false, ""], [true, "Back To Park"], [false, ""]]
+
 [node name="RestartGame" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 shortcut = ExtResource("4_3115b")
 text = "Spill Igjen"
 
 [node name="QuitToDyrehage" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 shortcut = ExtResource("5_j1ydd")
 text = "Til Dyrehagen"
 
 [node name="QuitToMenu" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 text = "Til Hovedmenyen"
 
@@ -100,6 +109,12 @@ preload_sample_data = true
 num_banks = 2
 bank_0 = ExtResource("4_lrpxb")
 bank_1 = ExtResource("5_lj3pg")
+
+[node name="Button_ind" parent="." instance=ExtResource("8_ithcp")]
+z_index = 1
+position = Vector2(-78, 362)
+is_active = true
+b = [[true, "Pet"], [false, ""], [false, ""], [false, ""], [true, "Don't Pet"], [false, ""]]
 
 [connection signal="timeout" from="AnimalSpawnTimer" to="." method="_on_animal_spawn_timer_timeout"]
 [connection signal="button_down" from="GameOverScreen/RestartGame" to="." method="_on_restart_game_button_down"]

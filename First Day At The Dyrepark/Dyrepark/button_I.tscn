@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bayept70m7nr"]
+
+[ext_resource type="Texture2D" uid="uid://bs5wl2fm6qj5o" path="res://Button.png" id="1_oa3pd"]
+[ext_resource type="Script" path="res://Dyrepark/Button_I.gd" id="2_7viso"]
+[ext_resource type="FontFile" uid="uid://bw00qd387xdso" path="res://Fonts/Coffee Extra.otf" id="3_flwa6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2of4l"]
+font = ExtResource("3_flwa6")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Sprite2D"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_oa3pd")
+script = ExtResource("2_7viso")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 149.0
+offset_bottom = 149.0
+scale = Vector2(0.09, 0.09)
+text = "asdf"
+label_settings = SubResource("LabelSettings_2of4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

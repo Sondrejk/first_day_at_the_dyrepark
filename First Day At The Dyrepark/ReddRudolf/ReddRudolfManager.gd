@@ -29,6 +29,11 @@ func _process(delta):
 		game_time += delta
 		game_speed = 0.02 * game_time + 1
 		spawn_timer.wait_time = 75/(game_time + 25)
+	else:
+		if (Input.is_key_label_pressed(KEY_I) or Input.is_joy_button_pressed(0, JOY_BUTTON_B)):
+			get_tree().reload_current_scene()
+		elif (Input.is_key_label_pressed(KEY_O) or Input.is_joy_button_pressed(0, JOY_BUTTON_Y)):
+			get_tree().change_scene_to_file(dyrehage_scene)
 
 func addscore(num):
 	score += num
@@ -42,7 +47,8 @@ func game_over():
 	game_over_screen.show()
 	game_active = false
 	game_speed = 0
-	
+
+
 
 func _on_restart_game_button_down():
 	get_tree().reload_current_scene()

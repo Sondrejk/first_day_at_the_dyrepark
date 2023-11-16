@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed : float = 200
 @export var run_speed : float = 400
-@export var starting_position : Vector2 = Vector2(0, 0)
+#@export var starting_position : Vector2 = Vector2(0, 0)
 
 var ap
 var pSprite
@@ -11,12 +11,15 @@ var state = ["idle", "front"]
 var active_speed = 0
 
 func _ready():
-	position = starting_position
+	
+	z_as_relative = false
+	#position = starting_position
 	ap = get_node("AnimationPlayer")
 	pSprite = get_node("Sprite")
 
 
 func _physics_process(_delta):
+	z_index = global_position.y
 	# Movement
 	velocity = Vector2.ZERO
 	
@@ -50,6 +53,9 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	run_animation()
+
+func am_player(): #function used as indicator
+	pass
 
 func run_animation():
 	if state == ["idle", "front"]:

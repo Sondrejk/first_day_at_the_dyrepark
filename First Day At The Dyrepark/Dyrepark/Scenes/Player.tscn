@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ch78gdjgtn32w" path="res://Dyrepark/Sprites/Zoo Worker with outline.png" id="2_3ulun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pql74"]
-size = Vector2(64, 64)
+size = Vector2(60, 6)
 
 [sub_resource type="Animation" id="Animation_3bf36"]
 resource_name = "Back_I"
@@ -192,10 +192,11 @@ _data = {
 script = ExtResource("1_liu0p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_pql74")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -48)
 scale = Vector2(2, 2)
 texture = ExtResource("2_3ulun")
 hframes = 15

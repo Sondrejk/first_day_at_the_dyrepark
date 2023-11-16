@@ -17,6 +17,7 @@ var particle_scene = preload("res://KlappHunden/Scenes/KlappHundenParticleExplos
 var is_game_active : bool = true
 var score : int = 0
 var game_speed : float = 1
+var after_death_timer = 3
 
 # Used to calculate total gametime
 var start_time = Time.get_unix_time_from_system()
@@ -29,16 +30,28 @@ func _on_animal_spawn_timer_timeout():
 		var animals : Array = [dog, dog, bear]
 			
 		add_child(animals[randi_range(0, 2)])
-		
+
+
+
 func _process(_delta):
-	# Calculates the total gametime for the difficulty scaling below
-	var current_time = Time.get_unix_time_from_system()
-	var game_time = current_time - start_time
+	if is_game_active:
+		# Calculates the total gametime for the difficulty scaling below
+		var current_time = Time.get_unix_time_from_system()
+		var game_time = current_time - start_time
+		
+		# Difficulty scaling
+		spawn_timer.wait_time = 75/(game_time + 25)
+		game_speed = 0.02 * game_time + 1
+	else:
+		if after_death_timer > 0:
+			after_death_timer -= _delta
+		else:
+			if (Input.is_key_label_pressed(KEY_I) or Input.is_joy_button_pressed(0, JOY_BUTTON_B)):
+				get_tree().reload_current_scene()
+			elif (Input.is_key_label_pressed(KEY_O) or Input.is_joy_button_pressed(0, JOY_BUTTON_Y)):
+				get_tree().change_scene_to_file(dyrehage_scene)
 	
-	# Difficulty scaling
-	spawn_timer.wait_time = 75/(game_time + 25)
-	game_speed = 0.02 * game_time + 1
-	
+
 # Adds score and updates the score text
 func add_score(amount):
 	score += amount
@@ -49,6 +62,8 @@ func game_over():
 	game_over_score_text.text = score_text.text
 	game_over_screen.show()
 	is_game_active = false
+
+
 
 func _on_restart_game_button_down():
 	get_tree().reload_current_scene()

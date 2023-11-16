@@ -14,6 +14,7 @@ var time_between_moves : float = 0.5			# Time between each move
 var time_between_dances : float = 2.0			# Time between each dance
 var timer : float = time_between_dances			# Timer that enables the loop in the process function
 
+@onready var bubble = $"../Bubble"
 
 # Function to append a random dance move from the possible ones to the bear dance move list
 func add_random_dance_move(num : int):
@@ -37,6 +38,7 @@ func _ready():
 func _process(delta):
 	if game_manager.is_game_active:
 		if not player_turn:
+			bubble.hide()
 			# Timer for executing moves every second
 			timer -=delta
 			
@@ -58,3 +60,5 @@ func _process(delta):
 					number_of_executed_moves += 1
 					idle_next_move = true
 					timer = time_between_moves
+		else:
+			bubble.show()

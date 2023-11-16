@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://cca0f8lg04joa"]
+
+[ext_resource type="Texture2D" uid="uid://c03k88xtsrgv1" path="res://Dyrepark/Sprites/Shade.png" id="1_1qt2l"]
+[ext_resource type="Texture2D" uid="uid://bp36u6w4vs2ee" path="res://Dyrepark/Sprites/Zoo Workers.png" id="1_22hhi"]
+[ext_resource type="Script" path="res://Dyrepark/zoo_keeper.gd" id="1_m3flo"]
+[ext_resource type="Texture2D" uid="uid://bgtgkopm1gyjx" path="res://Dyrepark/Sprites/Text Bubble.png" id="4_8pouk"]
+[ext_resource type="FontFile" uid="uid://bw00qd387xdso" path="res://Fonts/Coffee Extra.otf" id="5_b0lfx"]
+[ext_resource type="PackedScene" uid="uid://3cy2nohk4q06" path="res://Dyrepark/button_ind.tscn" id="6_dky15"]
+
+[sub_resource type="Animation" id="Animation_58bq2"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZooWorkers:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_poqq6"]
+resource_name = "Idle_Woman"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZooWorkers:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 3]
+}
+
+[sub_resource type="Animation" id="Animation_1n1ox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZooWorkers:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_103u6"]
+_data = {
+"Idle": SubResource("Animation_58bq2"),
+"Idle_Woman": SubResource("Animation_poqq6"),
+"RESET": SubResource("Animation_1n1ox")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1t1er"]
+radius = 123.011
+
+[sub_resource type="LabelSettings" id="LabelSettings_nq5sj"]
+font = ExtResource("5_b0lfx")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Zoo_Keeper" type="Node2D"]
+script = ExtResource("1_m3flo")
+
+[node name="Shade" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_1qt2l")
+
+[node name="ZooWorkers" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_22hhi")
+offset = Vector2(0, -32)
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_103u6")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 0.6)
+shape = SubResource("CircleShape2D_1t1er")
+
+[node name="Text_Bubble" type="Node2D" parent="."]
+
+[node name="TextBubble" type="Sprite2D" parent="Text_Bubble"]
+position = Vector2(0, -216)
+scale = Vector2(5, 5)
+texture = ExtResource("4_8pouk")
+
+[node name="Label" type="Label" parent="Text_Bubble"]
+offset_left = -111.0
+offset_top = -264.0
+offset_right = 331.0
+offset_bottom = -126.0
+scale = Vector2(0.5, 0.5)
+text = "I can get you started with Dogsledding and Petting the pups!"
+label_settings = SubResource("LabelSettings_nq5sj")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button_ind" parent="Text_Bubble" instance=ExtResource("6_dky15")]
+position = Vector2(-135, 278)
+scale = Vector2(2, 2)
+is_active = true
+b = [[true, "Dog Sledding"], [false, ""], [false, ""], [false, ""], [true, "Pet the Dogs"], [false, ""]]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

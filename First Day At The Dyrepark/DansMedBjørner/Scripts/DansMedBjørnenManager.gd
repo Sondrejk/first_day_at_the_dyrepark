@@ -34,7 +34,14 @@ func game_over():
 	score_node.hide()
 	game_over_score_node.text = str("SCORE: ", score)
 	game_over_screen_node.show()
-	
+
+func _process(delta):
+	if !is_game_active:
+		if (Input.is_key_label_pressed(KEY_I) or Input.is_joy_button_pressed(0, JOY_BUTTON_B)):
+			get_tree().reload_current_scene()
+		elif (Input.is_key_label_pressed(KEY_O) or Input.is_joy_button_pressed(0, JOY_BUTTON_Y)):
+			get_tree().change_scene_to_file(dyrehage_scene)
+
 # Game over menu buttons
 func _on_restart_game_button_down():
 	get_tree().reload_current_scene()

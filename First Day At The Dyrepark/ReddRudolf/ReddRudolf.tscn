@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://hewf6cdwui70"]
+[gd_scene load_steps=23 format=3 uid="uid://hewf6cdwui70"]
 
 [ext_resource type="Script" path="res://ReddRudolf/ReddRudolfManager.gd" id="1_wxx8a"]
 [ext_resource type="PackedScene" uid="uid://ctpqc75nl8agi" path="res://ReddRudolf/ReddRudolfSlede.tscn" id="2_0m5s8"]
@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://b3n5bwy2g6aeb" path="res://ReddRudolf/ReddRudolfParallax.tscn" id="5_dm1dw"]
 [ext_resource type="PackedScene" uid="uid://clxlyde7effg1" path="res://ReddRudolf/dog_anim.tscn" id="7_3asxo"]
 [ext_resource type="Texture2D" uid="uid://b8ykjq1brqufe" path="res://ReddRudolf/Tilemap.png" id="7_kbj8e"]
+[ext_resource type="Script" path="res://ReddRudolf/Line_Between.gd" id="9_eqkmq"]
 [ext_resource type="Shortcut" uid="uid://dyae28g1lcisu" path="res://General Use/Restart.tres" id="9_s4cgw"]
 [ext_resource type="Shortcut" uid="uid://dx8s541me2r6j" path="res://General Use/QuitDyrehage.tres" id="10_cm4sl"]
 [ext_resource type="Script" path="res://ReddRudolf/ParallaxBackground_Speed.gd" id="10_vrapq"]
 [ext_resource type="PackedScene" uid="uid://cpojve8u1o8ve" path="res://General Use/Clouds/cloud.tscn" id="11_okxcu"]
+[ext_resource type="PackedScene" uid="uid://3cy2nohk4q06" path="res://Dyrepark/button_ind.tscn" id="12_7cdr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bar1l"]
 size = Vector2(64, 64)
@@ -400,8 +402,10 @@ texture = ExtResource("3_j5uc2")
 
 [node name="ReddRudolfPlayer" type="Node2D" parent="."]
 
-[node name="ReddRudolfSlede" parent="ReddRudolfPlayer" instance=ExtResource("2_0m5s8")]
-position = Vector2(-537, -1)
+[node name="Line2D" type="Line2D" parent="ReddRudolfPlayer"]
+points = PackedVector2Array(-428, 15, -325, -29, -127, -34)
+default_color = Color(0.572549, 0.329412, 0.0901961, 1)
+script = ExtResource("9_eqkmq")
 
 [node name="HundBak" type="CharacterBody2D" parent="ReddRudolfPlayer"]
 position = Vector2(-359, 0)
@@ -412,6 +416,9 @@ shape = SubResource("RectangleShape2D_bar1l")
 
 [node name="Dog_Anim" parent="ReddRudolfPlayer/HundBak" instance=ExtResource("7_3asxo")]
 position = Vector2(0, 4)
+
+[node name="ReddRudolfSlede" parent="ReddRudolfPlayer" instance=ExtResource("2_0m5s8")]
+position = Vector2(-537, -1)
 
 [node name="HundForan" type="CharacterBody2D" parent="ReddRudolfPlayer"]
 position = Vector2(-180, 0)
@@ -496,17 +503,25 @@ text = "SCORE: 0"
 label_settings = SubResource("LabelSettings_c1xfd")
 horizontal_alignment = 1
 
+[node name="Button_ind" parent="GameOverScreen" instance=ExtResource("12_7cdr7")]
+position = Vector2(203, 242.5)
+is_active = true
+b = [[true, "Play Again"], [false, ""], [false, ""], [false, ""], [true, "Back To Park"], [false, ""]]
+
 [node name="RestartGame" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 shortcut = ExtResource("9_s4cgw")
 text = "Spill Igjen"
 
 [node name="QuitToDyrehage" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 shortcut = ExtResource("10_cm4sl")
 text = "Til Dyrehagen"
 
 [node name="QuitToMenu" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 text = "Til Hovedmenyen"
 

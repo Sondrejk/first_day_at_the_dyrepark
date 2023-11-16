@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://2vskchnd50cw"]
+[gd_scene load_steps=21 format=3 uid="uid://2vskchnd50cw"]
 
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DansMedBjørnenManager.gd" id="1_b04rf"]
 [ext_resource type="Texture2D" uid="uid://celtyg7pnra6b" path="res://ReddRudolf/ReddRudolfBakgrunn.png" id="2_bqxsa"]
@@ -8,9 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://defqijlubq8cl" path="res://DansMedBjørner/Sprites/Backgroud/DMB_fjell.png" id="3_sdq8d"]
 [ext_resource type="Texture2D" uid="uid://crnpgboek7b5e" path="res://DansMedBjørner/Sprites/Backgroud/DMB_Main_Stone.png" id="4_o5dcm"]
 [ext_resource type="Script" path="res://DansMedBjørner/Scripts/DancingPlayer.gd" id="4_qii0i"]
+[ext_resource type="Texture2D" uid="uid://2ijcwnl1tseg" path="res://DansMedBjørner/Sprites/zoo_worker_dancing.png" id="8_audgj"]
 [ext_resource type="Texture2D" uid="uid://dqlxn4vjhwcn" path="res://DansMedBjørner/Sprites/Backgroud/DMB_Foreground_Grass.png" id="8_jy0jx"]
 [ext_resource type="Shortcut" uid="uid://dyae28g1lcisu" path="res://General Use/Restart.tres" id="9_awck4"]
+[ext_resource type="Script" path="res://DansMedBjørner/Scenes/Imitate_bear.gd" id="9_hsy0f"]
 [ext_resource type="Shortcut" uid="uid://dx8s541me2r6j" path="res://General Use/QuitDyrehage.tres" id="10_17yfu"]
+[ext_resource type="PackedScene" uid="uid://3cy2nohk4q06" path="res://Dyrepark/button_ind.tscn" id="11_dy7o2"]
+[ext_resource type="Texture2D" uid="uid://8d1vjqaxvdvq" path="res://DansMedBjørner/Sprites/Bubble.png" id="15_axiak"]
+[ext_resource type="FontFile" uid="uid://bw00qd387xdso" path="res://Fonts/Coffee Extra.otf" id="16_achh3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lanfp"]
 font_size = 100
@@ -24,6 +29,11 @@ font_size = 100
 [sub_resource type="LabelSettings" id="LabelSettings_mfm4q"]
 line_spacing = 0.0
 font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_wgtur"]
+font = ExtResource("16_achh3")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
 
 [node name="DansMedBjørner" type="Node2D"]
 script = ExtResource("1_b04rf")
@@ -72,14 +82,22 @@ texture = ExtResource("2_xsbih")
 hframes = 5
 script = ExtResource("2_vs3ym")
 
+[node name="ZooWorkerDancing" type="Sprite2D" parent="."]
+modulate = Color(0.376471, 0.376471, 0.376471, 1)
+position = Vector2(0, 340)
+scale = Vector2(12, 12)
+texture = ExtResource("8_audgj")
+hframes = 5
+script = ExtResource("9_hsy0f")
+
 [node name="DancingPlayer" type="Node2D" parent="."]
 script = ExtResource("4_qii0i")
 
 [node name="ScoreText" type="Label" parent="."]
-offset_left = -220.0
-offset_top = 171.0
-offset_right = 207.0
-offset_bottom = 311.0
+offset_left = -476.0
+offset_top = 170.0
+offset_right = -49.0
+offset_bottom = 310.0
 text = "0"
 label_settings = SubResource("LabelSettings_lanfp")
 horizontal_alignment = 1
@@ -110,23 +128,48 @@ text = "SCORE: 0"
 label_settings = SubResource("LabelSettings_mfm4q")
 horizontal_alignment = 1
 
+[node name="Button_ind" parent="GameOverScreen" instance=ExtResource("11_dy7o2")]
+position = Vector2(211.055, 230.5)
+is_active = true
+b = [[true, "Play Again"], [false, ""], [false, ""], [false, ""], [true, "Back To Park"], [false, ""]]
+
 [node name="RestartGame" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 shortcut = ExtResource("9_awck4")
 text = "Spill Igjen"
 
 [node name="QuitToDyrehage" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 shortcut = ExtResource("10_17yfu")
 text = "Til Dyrehagen"
 
 [node name="QuitToMenu" type="Button" parent="GameOverScreen"]
+visible = false
 layout_mode = 2
 text = "Til Hovedmenyen"
 
 [node name="DmbForegroundGrass" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
 texture = ExtResource("8_jy0jx")
+
+[node name="Bubble" type="Sprite2D" parent="."]
+position = Vector2(314, 201)
+scale = Vector2(6, 6)
+texture = ExtResource("15_axiak")
+
+[node name="Label" type="Label" parent="Bubble"]
+offset_left = -15.0
+offset_top = -7.0
+offset_right = 185.0
+offset_bottom = 86.0
+scale = Vector2(0.15, 0.15)
+text = "YOUR TURN"
+label_settings = SubResource("LabelSettings_wgtur")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="button_down" from="GameOverScreen/RestartGame" to="." method="_on_restart_game_button_down"]
 [connection signal="button_down" from="GameOverScreen/QuitToDyrehage" to="." method="_on_quit_to_dyrehage_button_down"]
